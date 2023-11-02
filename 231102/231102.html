@@ -8,61 +8,61 @@
     <title>코딩 과제</title>
 
     <style>
+
         table{
             border-collapse: collapse;
         }
-        
         .p1{
             border: 3px solid red;
-            width: 250px;
+            width: 200px;
             height: 400px;
         }
         .p2{
             border: 3px solid red;
-            width: 500px;
+            width: 600px;
+
         }
         .p3{
             border: 3px solid red;
-            width: 250px;
+            width: 200px;
         }
         .p4{
             border: 1px solid black;
-            width: 377.5px;
+            width: 400px;
             height: 400px;
             background-color: orange;
         }
         .p5{
             border: 1px solid black;
-            width: 377.5px;
-            background-color: chartreuse;
+            width: 400px;
+            background-color: greenyellow;
         }
         .p6{
             border: 1px solid black;
-            width: 252px;
+            width: 200px;
             background-color: aqua;
         }
-        
     </style>
+
+
 </head>
 
 <body>
-    <table>
+    <table class="pp">
         <tr>
             <td class="p1"></td>
-            <td class="p2"></td>
+            <td colspan="3" class="p2"></td>
+            
             <td class="p3"></td>
         </tr>
-    </table>
-    <table>
         <tr>
-            <td class="p4"></td>
-            <td class="p5"></td>
-            <td class="p6"></td>
+            <td colspan="2" rowspan="4" class="p4"></td>
+            
+            <td colspan="2" rowspan="4" class="p5"></td>
+            
+            <td rowspan="4" class="p6"></td>
         </tr>
     </table>
-
-    
-        
 
 </body>
 
