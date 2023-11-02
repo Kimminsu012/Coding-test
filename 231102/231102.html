@@ -1,33 +1,69 @@
 <!-- html을 사용 하지 않고 css 스타일 사용하기 -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>코딩 과제</title>
-    
+
     <style>
-
-
-
+        table{
+            border-collapse: collapse;
+        }
+        
+        .p1{
+            border: 3px solid red;
+            width: 250px;
+            height: 400px;
+        }
+        .p2{
+            border: 3px solid red;
+            width: 500px;
+        }
+        .p3{
+            border: 3px solid red;
+            width: 250px;
+        }
+        .p4{
+            border: 1px solid black;
+            width: 377.5px;
+            height: 400px;
+            background-color: orange;
+        }
+        .p5{
+            border: 1px solid black;
+            width: 377.5px;
+            background-color: chartreuse;
+        }
+        .p6{
+            border: 1px solid black;
+            width: 252px;
+            background-color: aqua;
+        }
+        
     </style>
 </head>
+
 <body>
     <table>
         <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td class="p1"></td>
+            <td class="p2"></td>
+            <td class="p3"></td>
         </tr>
     </table>
+    <table>
+        <tr>
+            <td class="p4"></td>
+            <td class="p5"></td>
+            <td class="p6"></td>
+        </tr>
+    </table>
+
+    
+        
+
 </body>
+
 </html>
