@@ -68,3 +68,10 @@ body{
     font-size: 20px;
     font-weight: 800;
 }
+
+.drinkMenu li{
+    height: 35px;
+    border-bottom: 1px dotted blue;
+    width: 150px;
+    cursor: pointer;
+}
