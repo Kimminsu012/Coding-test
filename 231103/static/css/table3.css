@@ -1,0 +1,43 @@
+/* 이름을 만드는 표기법 ( 정해진 표기법은 없지만 암묵적인 약속이 있다 )
+    카멜표기법 (낙타) - myPageInfo 시작단어의 다음 단어 시작이 대문자 (웹에서 주로 사용)
+    스네이크표기법 (뱀) - my_page_info 언더바를 이용해 늘림 (파이썬, 데이터베이스에서 주로 사용)
+    파스칼표기법 - MyPageInfo 카멜과 비슷하지만 첫글자부터 단어의 시작이 대문자
+    헝가리안표기법 - class_numTd 어디에 사용되는건지 표기
+        g_val , s_val, c_val ( javascript의 예시 )
+    */
+.box{
+    border-collapse: collapse; /* td간격제거 */
+}
+.box tr th{
+    border-bottom: 3px solid #aaa;
+}
+.num{
+    width: 50px;
+    height: 40px;
+}
+.name{
+    width: 150px;
+}
+.score{
+    width: 50px;
+}
+.rank{
+    width: 40px;
+}
+
+.box tr td{
+    text-align: center;
+    height: 30px;
+    border-bottom: 1px solid #bbb;
+}
+.nameTd{
+    font-weight: 800;
+}
+.nameTd:hover{
+    background-color: black;
+    color: #fff;
+}
+.rankTd{
+    color: red;
+}
+
