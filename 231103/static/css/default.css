@@ -1,0 +1,70 @@
+body{
+    background-color: #ddd;
+    margin: 0;
+}
+
+#wrap{
+    width: 1200px;
+    border-collapse: collapse;
+    margin: 20px auto;
+}
+
+#wrap tr td{
+    border: 1px solid black;
+}
+
+#header{
+    height: 80px;
+    width: 100%;
+    background-color: white;
+    font-weight: 800;
+    font-size: 19px;
+    border-radius: 20px;
+}
+
+#slidWarp{
+    width: 600px;
+    height: 700px;
+}
+
+#drinkWarp{
+    width: 600px;
+    height: 350px;
+}
+
+#eventWrap{
+    height: 350px;
+}
+
+.menuItem{
+    padding-left: 50px; 
+}
+
+.slide{
+    width: 100%; /* 부모태그인 #slideWrap의 너비와 같아진다. */
+}
+
+.leftMove, .rightMove{
+    width: 50px;
+    font-size: 50px;
+    text-align: center;
+    color: darkslateblue;
+}
+
+.leftMove i:hover , .rightMove i:hover{
+    cursor: pointer;
+}
+
+.slideImage{
+    width: 500px;
+}
+
+.slideImage img{
+    width: 100%;
+}
+
+.drinkMenu{
+    list-style: none;
+    font-size: 20px;
+    font-weight: 800;
+}
