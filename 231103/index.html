@@ -4,23 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <style>
+
+        /* .은 클래스를 의미한다.
+        html태그에 부여한 class 명이 A 라면     .A{ } 로 작석해야 한다.
+        여러개의 클래스를 한번에 선택하여 스타일을 적용하려면
+        클래스명 사이사이에 , 를 넣어서 표현한다.
+        */
+        .topleft , .topright, .side{ /* topleft, topright, side 클래스들을 모두 선택 */
+            width: 200px;
+        }
+        .left , .right{ /* left, right 클래스들을 모두선택하여 너비적용 */
+            width: 400px;
+        }
+        .topmiddle{ 
+            width: 600px;
+        }
+        .top td{ /* 클래스명이 top인 tr 밑에 있는 모든 td를 선택하여 스타일 적용 */
+            border: 3px solid red;
+        }
+        .content td{ /* 클래스명이 content인 tr 밑에 있는 모든 td를 선택하여 스타일 적용 */
+            border: 1px solid black;
+        }
+        .top{
+            height: 200px;
+        }
+        .content{
+            height: 600px;
+        }
+        .left{
+            background-color: orange;
+        }
+        .right{
+            background-color: limegreen;
+        }
+        .side{
+            background-color: khaki;
+        }
+        .box{
+            border-collapse: collapse;
+            width: 1000px;
+            height: 800px;
+        }
+    </style>
+
 </head>
 <body>
     
-    <table>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+    <table class="box">
+        <tr class="top">
+            <td class="topleft"></td>
+            <td colspan="3" class="topmiddle"></td>
+            
+            <td class="topright"></td>
         </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+        <tr class="content">
+            <td colspan="2" class="left"></td>
+            
+            <td colspan="2" class="right"></td>
+            
+            <td class="side"></td>
         </tr>
     </table>
 
