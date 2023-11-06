@@ -1,0 +1,46 @@
+body{
+    margin: 0;
+}
+#wrap{
+    border-collapse: collapse;
+    width: 1000px;
+}
+#wrap tr td{
+    border: 1px solid black;
+}
+#top{
+    width: 100%;
+}
+#top table tr td{
+    border: 0;
+    width: 70px;
+}
+#top table{
+    float: right; /* 정렬의 기준을 세워줌 float은 제어가 어려워 잘 안쓰고 
+    flex or grid 라는걸 쓴다. */
+}
+
+#header table{
+    width: 500px;
+    margin: 0 auto;
+/*
+    해당 태그의 안에있는 위치를 해당 공간에서 가운데 위치하려면
+    margin을 이용하여 왼쪽 오른쪽 여백을 똑같이
+    설정 되도록 auto를 준다.
+    margin: 0 auto; 는 margin: 위아래여백 왼오른쪽여백;
+    margin: 0 auto; 만 설정 한다고 해서 가운데로 위치하지않는다.
+    넓이의 총합과 해당 태그의 넓이를 알아야 가운데로 위치 할 수 있다.
+*/
+}
+
+#header table tr td{
+    border: 0;
+}
+
+#side{
+    width: 300px;
+    height: 400px;
+}
+#mainImg{
+    width: 700px;
+}
