@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #box1{
+            width: 400px;
+            height: 300px;
+            border: 1px double green;
+            background-color: yellow;
+            border-radius: 25px;
+            padding: 20px 100px;
+            margin-top: 90px ;
+        }
+        #box2{
+            width: 200px;
+            height: 100px;
+            background: blue;
+            margin-top: -220px;
+            margin-left: 200px;
+        }
+        #box3{
+            box-sizing: border-box; /* 안쪽여백, 테두리선에 의해 크기가 변하지않는다. */
+            width: 500px;
+            /*height: 400px;*/ /* box-sizing을 적용한 상태에서 높이 기준이 없어져서 패딩의 값이 적용된다. */
+            background-color: black;
+            padding: 150px 175px;
+            color: #000000;
+        }
+        #box4{
+            width: 150px;
+            height: 100px;
+            background-color: white;
+        }
+        #box5{
+            width: 600px;
+            /*height: 50px;*/
+            background-color: aqua;
+            text-align: center;
+            vertical-align: middle;
+            box-sizing: border-box;
+            padding: 20px 0;
+        }
+        #box6{
+            width: 500px;
+            background-color: violet;
+            text-align: right;
+            padding-right: 10px;
+            box-sizing: border-box;
+        }
+    </style>
+    
+</head>
+<body>
+
+    <div id="box1">
+
+    </div>
+    
+    <div id="box2">
+
+    </div>
+
+    <div id="box3">
+        <div id="box4">
+            <h3>공고중인 보호동물</h3>
+        </div>
+    </div>
+
+    <br><br>
+    <div id="box5">
+        입양 가능 ! 새로운 가족을 기다리고 있어요
+    </div>
+
+    <div id="box6">
+        반려동물 사랑으로 입양하세요
+    </div>
+
+    <!--
+        태그에 적용할 수 있는 여백
+        안쪽 여백 - padding
+        바깥 여백 - margin
+        margin에 +가 아닌 -를 넣으면 위로 올라가며 다른 태그 위로 올라갈수있다.
+        올라가는 기준은 top, bottom 등 기준을 정한 것을 토대로 올라간다.
+        div 크기나 위치는 바깥에서부터 결정을 하며 맞춰야 한다.
+        vertical-align - div에선 수직정렬이 안되고 table에선 가능
+        padding으로 위치를 정하면 바깥영역에 글씨를 쓰지못한다. 안쪽 여백이 없는공간만 가능
+        magin으로 위치를 정하면 바깥영역이 여백으로 안들어와 글씨를 쓸수있다.
+        padding은 한 영역만 쓰기위해 쓰이며 padding으로 위치를 정한 후
+        magin을 사용하면 padding에 대한 설명이나 글을 작성할수있다.
+
+        padding은 안쪽여백을 생성한다.
+        padding으로 생성된 공간은 내부에서 사용불가이다.( 텍스트, 이미지 등등)
+        div 영역 안에 특정 태그의 위치를 이동시키고 다른 공간에 텍스트나 이미지를
+        표현하고자한다면 padding이 아닌 magin으로 이동시켜야 한다.
+        
+        padding은 안쪽에 사용 할 수 없는 공간을 생성 하는것이다.
+        margin은 기본적으로 사용할 수 없는 바깥쪽 공간을 생성하는것이기 때문에
+        div 영역 내부에 표시되는 내용에는 영향을 주지 않는다.
+
+        하여 영역 안쪽의 태그들의 위치를 설정 하기위해서는 padding을
+        영역의 화면에서 위치를 설정하기 위해서 margin을 이용한다.
+
+        padding을 이용한 메뉴는 빈공간에 마우스가 갔을 때 상호작용한다. ( 빈공간은 본인의 것임)
+        margin을 이용한 메뉴는 빈공간에 마우스가 갓을 때 상호작용을 안한다. ( 빈공간은 본인의 것이 아님)
+        정해진 규칙은 없으므로 개발자 마다 방식이 다르다.
+
+        div - division(분할)
+        div 태그를 이용하여 화면을 분할해서 사용할 수 있다.
+        메뉴 영역, 사이드영역, 본문영역, 바닥 영역 등등
+        div 가 가진 css 속성은 단 하나 display:block; 이다.
+        block값은 면적을 의미한다.
+
+        공간(영역) 태그
+        p, h1~6, div, iframe, 
+        시멘트 태그 ( 공간 )
+        header - 메뉴, 로고, 제목, 머리글 
+        main - 페이지내의 중심주제, 주요내용, 콘텐츠
+        section - 주제별, 카테고리별, 테마별
+        article - 기사, 블로그전체내용, 텍스트 중심의 글
+        footer - 바닥글, 페이지 하단에 정보표현
+        nav - 메뉴
+        aside - 좌측, 우측 사이드 공간
+        figure - 이미지, 다이어그램, 영상 등 독립적인 컨텐츠
+    -->
+
+</body>
+</html>
