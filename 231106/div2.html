@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #div1{
+            width: 500px;
+            height: 350px;
+            background-color: aquamarine;
+            box-sizing: border-box;
+            padding-left: 250px;
+            padding-top: 200px;
+            color: white;
+        }
+        #div1Child1{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            font-size: 23px;
+            font-weight: 500;
+        }
+        #div1Child2{
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            margin-left: -150px;
+            font-size: 23px;
+            font-weight: 500;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div id="div1">
+        <div id="div1Child1">child1</div>
+        <div id="div1Child2">child2</div>
+    </div>
+
+    <!-- 어느 태그든 높이는 적용이 안되며 넓이는 기본적으로 적용된다
+    높이값인 곳에 공간을 넣는다면 그 부분을 인식하여 기준점이 생긴다.
+    div를 사용하여 위치를 옮길시 padding값을 안주고 진행을 하면
+    기준점은 빈공간을 기준으로 하여 전체적으로 움직이지만
+    padding을 이용하여 1px이상을 줄 시 기준점이 새로 생겨
+    옮길려는 값만 움직이게 할 수 있다. -->
+
+</body>
+</html>
