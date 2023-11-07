@@ -1,0 +1,58 @@
+body{
+    margin: 0;
+}
+
+#wrap{
+    width: 1000px;
+    margin: 0 auto;
+    position: relative;
+}
+
+#header{
+    width: 100%;
+    padding: 15px 0;
+}
+
+.logoWrap{
+    width: 100px;
+    height: 50px;
+}
+.menuWrap{
+    position: absolute;
+    left: 120px;
+    top: 0;
+}
+.nav{
+    position: relative;
+    line-height: 80px; /*텍스트 크기를 잘 모를때 전체 높이를 입력하면 가운데 라인으로 들어가게 해준다.*/
+}
+/*
+    line-height
+    한줄의 높이를 설정,
+    설정 된 높이 안에 텍스트가있다면
+    텍스트의 높이를 고려하여 위아래 여백을
+    씌워준다. 
+*/
+.menu{
+    width: 150px;
+    position: absolute;
+}
+.nav .menu:nth-child(2){
+    left: 150px;
+}
+.nav .menu:nth-child(3){
+    left: 300px;
+}
+.nav .menu:nth-child(4){
+    left: 450px;
+}
+.nav .menu:nth-child(5){
+    left: 600px;
+}
+/*
+동일한 태그명을 가진 하위 태그를 선택하는방법
+.nav .menu:nth-child(3)
+
+nth-child(n) 가상선택자 n번째 하위 태그를 선택하는 것
+*/
+
