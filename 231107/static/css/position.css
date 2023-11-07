@@ -56,3 +56,100 @@ body{
 nth-child(n) 가상선택자 n번째 하위 태그를 선택하는 것
 */
 
+/* 새로운 방법 이지만 잘 사용 안함 */
+#main{
+    position: relative;
+    width: 100%;
+}
+.imgbox{
+    position: relative;
+    width: 300px;
+    height: 200px;
+    margin-top: 15px;
+}
+
+#main .imgbox:nth-child(4){
+    top:-645px;
+    left: 315px;
+    height: 0;
+}
+#main .imgbox:nth-child(5){
+    top: -230px;
+    left: 315px;
+    height: 0;
+}
+#main .imgbox:nth-child(6){
+    top: -245px;
+    left:calc( 315px * 2 );
+    height: 0;
+}
+
+#foot{
+    width: 100%;
+    padding: 50px;
+    background-color: darkslategray;
+    color: #ddd;
+}
+
+/* #main{
+    position: relative;
+    width: 100%;
+}
+
+#main .imgbox:nth-child(1){
+    position: relative;
+}
+
+#main .imgbox:nth-child(2){
+    position: absolute;
+    left: 350px;
+    top: 0px;
+}
+
+#main .imgbox:nth-child(3){
+    position: relative;
+    margin-top: 10px;
+}
+#main .imgbox:nth-child(4){
+    position: relative;
+    margin-top: 10px;
+}
+
+#main .imgbox:nth-child(5){
+    position: absolute;
+    left: 350px;
+    top: 428px;
+}
+#main .imgbox:nth-child(6){
+    position: absolute;
+    left: 700px;
+    top: 428px;
+} */
+
+
+
+/* .imgbox{
+    position: absolute;
+}
+
+#main .imgbox:nth-child(2){
+    left: 350px;
+}
+#main .imgbox:nth-child(3){
+    top: 300px;
+}
+#main .imgbox:nth-child(4){
+    top: 600px;
+}
+#main .imgbox:nth-child(5){
+    top: 600px;
+    left: 350px;
+}
+#main .imgbox:nth-child(6){
+    top: 600px;
+    left: 700px;
+}
+
+#foot{
+    margin-top: 800px;
+} */
