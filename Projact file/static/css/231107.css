@@ -1,0 +1,114 @@
+body{
+    margin: 0;
+}
+
+#Wrap{
+    width: 1000px;
+    position: relative;
+    margin: 0 auto;
+    height: 600px;
+}
+
+#header{
+    background-color: aqua;
+    width: 100%;
+    position: relative;
+    top: 0px;
+    height: 50px;
+}
+
+#logoWrap{
+    position: relative;
+    top: 0;
+    width: 100px;
+    height: 50px;
+}
+
+#headerBar{
+    width: 100%;
+    position: relative;
+    top: -50px;
+    left: 100px;
+}
+
+.mainName{
+    margin: 0;
+    font-size: 20px;
+}
+.subName{
+    margin-top: 0;
+    font-size: 10px;
+}
+
+#nav{
+    background-color: #ddd;
+    position: fixed;
+    width: 1000px;
+    height: 32px;
+    z-index: 1000000000;
+}
+
+.navMenu{
+    position: absolute;
+    left: 0;
+    padding: 5px;
+}
+
+#nav .navMenu:nth-child(2){
+    left: 50px;
+}
+#nav .navMenu:nth-child(3){
+    left: 150px;
+}
+#nav .navMenu:nth-child(4){
+    left: 250px;
+}
+
+#menuWrap{
+    position: relative;
+    width: 100%;
+}
+
+#menu{
+    box-sizing: border-box;
+    width: 100%;
+    background-color: green;
+    position: absolute;
+    top: 0px;
+}
+
+.menuList{
+    border: 1px solid black;
+    padding-left: 100px;
+    text-align: left;
+    margin-top: 50px;
+}
+
+.coffee , .tea , .dessert{
+    position: relative;
+    left: -30px;
+    font-weight: normal;
+}
+
+.coffeeList , .teaList , .dessertList{
+    list-style: none;
+    padding-top: 5px;
+}
+
+#notiBar{
+    position: absolute;
+    width: 600px;
+    left: 300px;
+    bottom: 201px;
+}
+
+.notiList{
+    font-size: 20px;
+    font-weight: 100px;
+    padding: 5px;
+}
+
+.menuListDot{
+    font-weight: bold;
+    padding: 3px;
+}

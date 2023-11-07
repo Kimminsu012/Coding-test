@@ -1,16 +1,67 @@
-<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 
-    과제
+    <link rel="stylesheet" href="./static/css/231107.css">
+</head>
+<body>
 
-    div 태그를 사용하여
-    메인 페이지를 만들기
-    자세하게 안 만들어도 되고
-    마지막에 만든 것 처럼 로고, 메뉴, 본문, foot 구성으로
-    만들기
-    
-    단, 본문에는 이미지로 채우지 말고 ul 태그를 사용하여
-    몇개의 글 표시 하기
+        <div id="Wrap">
+            <div id="header">
+                <div id="logoWrap">
+                    <img src="https://loremflickr.com/100/50/coffee" alt="logo">
+                </div>
+                <div id="nav">
+                    <div class="navMenu">메뉴</div>
+                    <div class="navMenu">찾아오는길</div>
+                    <div class="navMenu">공지사항</div>
+                    <div class="navMenu">문의사항</div>
+                </div>
+                <div id="headerBar">
+                    <h1 class="mainName">무지개카페</h1>
+                    <h2 class="subName">우리 카페는 어떤 카페다</h2>
+                </div>    
+            </div>
 
-    여태까지 사용했던 것들을 조합하여 만들어보기
 
--->
+            <div id="menuWrap">
+                <div id="menu">
+                    <h2 class="menuList">메뉴</h2>
+                    <ul class="menuBar">
+                        <li class="menuListDot">커피
+                            <ol class="coffee">
+                                <li class="coffeeList">아메리카노</li>
+                                <li class="coffeeList">카라멜마끼아또</li>
+                                <li class="coffeeList">바닐라라떼</li>
+                            </ol>
+                        </li>
+                        <li class="menuListDot">차
+                            <ol class="tea">
+                                <li class="teaList">녹차</li>
+                                <li class="teaList">유자차</li>
+                                <li class="teaList">캐모마일차</li>
+                            </ol>
+                        </li>
+                        <li class="menuListDot">디저트
+                            <ol class="dessert">
+                                <li class="dessertList">생크림 케이크</li>
+                                <li class="dessertList">초코 케이크</li>
+                                <li class="dessertList">케이크</li>
+                            </ol>
+                        </li>
+                    </ul>
+                    <h2 id="notiBar">
+                        <ul class="notiListDot">공지사항
+                            <li class="notiList">이달의 이벤트를 진행합니다.</li>                            <li class="notiList">가장 인기 많은 메뉴를 투표 해주세요.</li>
+                            <li class="notiList">이번달 카페 리뉴얼 공사 일정</li>
+                        </ul>
+                    </h2>
+                </div>
+            </div>
+        </div>
+
+</body>
+</html>
