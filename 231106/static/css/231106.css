@@ -1,0 +1,32 @@
+#out{
+    width: 800px;
+    height: 250px;
+    background-color: yellow;
+    box-sizing: border-box;
+    padding-left: 600px; /* 두번째 방법 */
+}
+#in{
+    width: 200px;
+    height: 50px;
+    background-color: gray;
+    /* margin-left: 600px; 첫번째 방법 */
+}
+
+#master{
+    width: 400px;
+    background-color: lightblue;
+    text-align: center;
+    padding: 50px 0;
+}
+
+#animal{
+    background-color: forestgreen;
+    width: 1000px;
+    padding: 150px 0 30px 10px; 
+    /* 
+    padding: 위아래 왼쪽오른쪽 만 적용 (2개 넣을시) 
+    padding: 위아래왼쪽오른쪽 (1개를 넣을시)
+    padding: 위 오른쪽 아래 왼쪽 (4개를 넣을시)
+    적용되는 것은 시계방향순으로 하나씩 적용 된다.
+    */
+}
