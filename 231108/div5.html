@@ -43,20 +43,47 @@
         }
 
 
-        
+
         #main{
             width: 1000px;
             margin: 0 auto;
-            background-color: aqua;
-        }
-
-        .imgBox{
-            width: 100%;
         }
         
         .image{
-            padding: 100px 300px;
+            width: 400px;
+            position: relative;
+            right: 0;
+            top: 0;
+            display: inline-block;
+            transition-property: width, right,top;
+            transition-duration: 1s , 1s,1s;
         }
+
+        .image img{
+            width: 100%;
+        }
+
+        .imgBox{
+            text-align: center;
+            height: 300px;
+            margin-bottom: 100px;
+        }
+
+        .imgBox:hover .image{
+            width: 200px;
+            right: 150px;
+            top: 50px;
+        }
+
+        .detail{
+            display: none;
+        }
+
+        .imgBox:hover .detail{
+            display: inline-block;
+        }
+
+        /* margin은 해당 영역이 display:block; 이여야만 적용 된다. */
 
     </style>
 
@@ -68,21 +95,35 @@
             <div class="image">
                 <img src="https://loremflickr.com/400/300/cat?random=1" alt="고양이1">
             </div>
+                <div class="detail">
+                    <u><strong>차원이 다른 고양이</strong><br>
+                    주위에 사람들이 만지게 만드는 <strong>귀여움</strong><br>
+                    당신만의 고양이를 가질 수 있습니다.</u>
+                </div>
         </div>
         <div class="imgBox">
             <div class="image">
                 <img src="https://loremflickr.com/400/300/cat?random=2" alt="고양이2">
             </div>
+                <div class="detail">
+                    
+                </div>
         </div>
         <div class="imgBox">
             <div class="image">
                 <img src="https://loremflickr.com/400/300/cat?random=3" alt="고양이3">
             </div>
+                <div class="detail">
+                    
+                </div>
         </div>
         <div class="imgBox">
             <div class="image">
                 <img src="https://loremflickr.com/400/300/cat?random=4" alt="고양이4">
             </div>
+                <div class="detail">
+                    
+                </div>
         </div>
     </main>
 
