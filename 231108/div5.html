@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        #menuWrap{
+            width: 800px;
+            margin: 0 auto; /* 태그의 위치를 브라우저 가운데 표시하려면 너비와 
+                                margin:0 auto; 값을 부여해야한다. */
+            background-color: cornflowerblue;
+        }
+
+        .menu{
+            position: relative;
+            display: inline-block;
+            padding: 15px 30px;
+        }
+
+        .menu:hover{
+            background-color: black;
+            color: white;
+            cursor: pointer;
+        }
+
+        .sub{
+            display: none;
+            position: absolute;
+            top: 51.6px;
+            left: 0;
+            background-color: cornflowerblue;
+            width: 100%;
+            text-align: center;
+            line-height: 30px;
+            color: white;
+        }
+
+        .menu:hover .sub{
+            display: block;
+        }
+
+
+        
+        #main{
+            width: 1000px;
+            margin: 0 auto;
+            background-color: aqua;
+        }
+
+        .imgBox{
+            width: 100%;
+        }
+        
+        .image{
+            padding: 100px 300px;
+        }
+
+    </style>
+
+</head>
+<body>
+    
+    <main id="main">
+        <div class="imgBox">
+            <div class="image">
+                <img src="https://loremflickr.com/400/300/cat?random=1" alt="고양이1">
+            </div>
+        </div>
+        <div class="imgBox">
+            <div class="image">
+                <img src="https://loremflickr.com/400/300/cat?random=2" alt="고양이2">
+            </div>
+        </div>
+        <div class="imgBox">
+            <div class="image">
+                <img src="https://loremflickr.com/400/300/cat?random=3" alt="고양이3">
+            </div>
+        </div>
+        <div class="imgBox">
+            <div class="image">
+                <img src="https://loremflickr.com/400/300/cat?random=4" alt="고양이4">
+            </div>
+        </div>
+    </main>
+
+
+    <div id="menuWrap">
+        <div class="menu">
+            HOME
+        </div>
+        <div class="menu">
+            자동차
+            <div class="sub"> <!-- 서브메뉴와 같은 역할을 할려면 상위태그 안에 하위 태그로 들어가야 한다. -->
+                <div class="subMenu">시승신청</div>
+                <div class="subMenu">판매순위</div>
+            </div>
+        </div>
+        <div class="menu">
+            증권
+            <div class="sub">
+                <div class="subMenu">주요주식</div>
+                <div class="subMenu">국내주식</div>
+                <div class="subMenu">해외주식</div>
+            </div>
+        </div>
+        <div class="menu">
+            영화
+            <div class="sub">
+                <div class="subMenu">국내영화</div>
+                <div class="subMenu">해외영화</div>
+                <div class="subMenu">영화장르</div>
+            </div>
+        </div>
+        <div class="menu">
+            웹툰
+            <div class="sub">
+                <div class="subMenu">일요일</div>
+                <div class="subMenu">월요일</div>
+                <div class="subMenu">화요일</div>
+                <div class="subMenu">수요일</div>
+                <div class="subMenu">목요일</div>
+                <div class="subMenu">금요일</div>
+                <div class="subMenu">토요일</div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
+<!-- 서버 : 서비스를 제공하기 위한 운영체제가 설치된 컴퓨터
+            웹서비스를 제공하는 컴퓨터는 웹 서버라고 한다.
+        서버가 서비스를 제공하려면 주소와 port가 필요하다.
+        백엔드 - 자바, 서버컴퓨터에서 동작하는 프로그램 개발
+        프론트엔트 - 클라이언트 컴퓨터에서 동작하는 프로그램 개발
+-->
