@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> display </title>
+
+    <style>
+        #box1{
+            background-color: wheat;
+            width: 500px;
+            padding: 15px 0;
+        }
+        #bold{
+            background-color: violet;
+            width: 200px;
+            height: 100px;
+            /* display: inline-block; inline 과 block의 특성을 둘 다 가지고 있다. */
+            display: none;
+        }
+
+        .menu{
+            padding: 0 20px;
+            
+        }
+
+        #box2{
+            width: 800px;
+            background-color: violet;
+            color: seashell;
+        }
+        .menuList{
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            /* height: 52px; */
+            display: flex;
+        }
+        .menuList li{
+            background-color: violet;
+            /* float: left; */
+            padding: 15px 20px;
+        }
+
+        /* b태그는 display가 inline으로 기본 설정 되어있다.
+            안에 있는 글씨나 무언가의 크기만큼 표시를 해준다.
+            display:inline 을 가진 태그들은 넓이와 높이를 가질 수 없다.
+            기본적으로 display:inline 인 태그들에게 무조건 block을 줄 수 없다.
+            block인 태그들 옆에 다른 태그들이 올 수 없다.
+
+        ul태그의 하위 태그인 li는 기본적으로 display:list-item; 이여야 적용이 되며
+        다른 diplay 스타일을 주면 ul태그의 영향권을 벗어난다.
+        */
+
+    </style>
+
+</head>
+<body>
+    
+    <div id="box1">
+        <span class="menu">HOME</span>
+        <span class="menu">자동차</span>
+        <span class="menu">스포츠</span>
+        <span class="menu">영화</span>
+        <span class="menu">웹툰</span>
+    </div>
+    <H3>나는 헤드라인 3번</H3>
+    <b id="bold">볼드</b>
+    <i>테스트</i>
+
+    <div id="box2">
+        <ul class="menuList">
+            <li>HOME</li>
+            <li>자동차</li>
+            <li>스포츠</li>
+            <li>영화</li>
+            <li>웹툰</li>
+        </ul>
+    </div>
+
+
+    <!--
+
+        display: block; 가로방향으로 브라우저의 전체를 영역으로 표시하는 방법
+                        display block을 가진 해당 태그 앞뒤로
+                        줄바꿈(엔터)를 생성
+        
+        display: inline; 태그의 앞뒤로 줄바꿈을 생성하지않는다.
+                        너비,높이가 적용되지않는다. 태그내부의 
+                        컨텐츠(텍스트,이미지,동영상 등등)크기 만큼만 적용된다.
+
+        display: inline-block;  inline처럼 줄바꿈이 생성되지 않지만
+                                너비, 높이를 적용할 수 있다.
+
+        display: none;  display를 사용하지 않게 된다.
+                        즉, 화면에 표시 하지 않는다.
+                        display는 화면에 어떻게 표시할것인지를 정하는 속성이다.
+
+        <span> - 기본적으로 display:inline 으로 설정되어 있다.
+                특정 텍스트를 지정하여 스타일을 줄 때 사용한다.
+
+        float - 정렬, html태그의 순서에서 제거 된다.
+    -->
+
+
+</body>
+</html>
