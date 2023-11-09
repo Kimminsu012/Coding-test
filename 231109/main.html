@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        /* overflow 명령어
+        visible; - 기본적인 상태
+        hidden - 지정된 공간 이상의 것들을 숨겨주는 역할
+        scroll - 지정된 공간에 위아래로 스크롤 기능이 생김
+        auto - 공간을 넘어가게 되면 자동으로 스크롤을 넣어주는 역할 ( 필요할때 넣어줌 )
+        */
+
+        #textBox1{
+            width: 330px;
+            height: 34.6px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            border: 1px solid black;
+            padding: 10px;
+            -webkit-line-clamp: 2;
+            word-wrap: break-word; /* 지정된 크기에서 줄바꿈 허용 */
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+        }
+
+        /* 여러줄의 ...을 표시하기 위한 필수 css
+        width, overflow, test-overflow, -webkit-line-clamp 
+        display: -webkit-box, -webkit-box-orient: vertical;
+        */
+
+        /* white-space 명령어 
+        normal - 기본값 ( 너비에 맞춰서 자동 줄바꿈 )
+        nowrap - 자동 줄바꿈을 적용하지 않는다
+        */
+
+        /* 한줄인 경우 ...을 표시하기 위한 필수 css */
+        #ellipse{
+            width: 50px;
+            overflow: hidden;
+            text-overflow: ellipsis ;
+            white-space: nowrap;
+        }
+
+        #textBox1:hover{
+            overflow: scroll;
+            height: 67.8px;
+            width: 330px;
+            text-overflow: unset;
+            display: block;
+        }
+
+        /* #ellipse:hover{
+            height: 40px;
+            width: 100px;
+            cursor: pointer;
+            overflow: scroll;
+            text-overflow: unset;
+            white-space: normal;
+        } */
+
+    </style>
+</head>
+<body>
+    
+    <P id="ellipse">
+        동해물과 백두산이 마르고 닳도록
+    </P>
+
+    <div id="textBox1">
+        동해물과 백두산이 마르고 닳도록 
+        하느님이 보우하사 우리나라 만세
+        무궁화 삼천리 화려강산
+        대한사람 대한으로 길이 보전하세
+
+        남산위에 저 소나무 철갑을 두른듯
+        바람서리 불변함은 우리 기상일세
+        무궁화 삼천리 화려강산
+        대한사람 대한으로 길이 보전하세
+
+        
+    </div>
+
+</body>
+</html>
