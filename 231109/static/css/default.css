@@ -4,7 +4,9 @@
 }
 
 #wrap{
+    background-color: antiquewhite;
     width: 900px;
+    height: 1000px;
     margin: 0 auto;
 }
 
@@ -170,6 +172,11 @@
 }
 
 #footer{
-    position: absolute;
-    bottom: 0;
+    position: relative;
+    top: 450px;
+    left: 30px;
+}
+
+.menu:hover{
+    cursor: pointer;
 }
