@@ -52,30 +52,30 @@
         // 연산자
         // 대입연산자 : = , 오른쪽에 데이터를 왼쪽에 저장
         // 사칙연산자 : + , - , * , / , % , **(거듭제곱 2^4)
-        var num1 = 24;
-        var num2 = 7;
-        document.write( " + 연산자 : " + (num1+num2) );
-        document.write( "<br> - 연산자 : " + (num1-num2) );
-        document.write( "<br> * 연산자 : " + (num1*num2) );
-        document.write( "<br> / 연산자 : " + (num1/num2) );
-        document.write( "<br> % 연산자 : " + (num1%num2) ); // 나머지값이 나온다.
-        document.write( "<br> ** 연산자 : " + (2**8) );
+        // var num1 = 24;
+        // var num2 = 7;
+        // document.write( " + 연산자 : " + (num1+num2) );
+        // document.write( "<br> - 연산자 : " + (num1-num2) );
+        // document.write( "<br> * 연산자 : " + (num1*num2) );
+        // document.write( "<br> / 연산자 : " + (num1/num2) );
+        // document.write( "<br> % 연산자 : " + (num1%num2) ); // 나머지값이 나온다.
+        // document.write( "<br> ** 연산자 : " + (2**8) );
 
         // 복합대입연산자 : += , -= , *= , /= , %=
-        var a = 10;
-        a+=5; // a = a + 5;
-        document.write( "<br>" + a );
+        // var a = 10;
+        // a+=5; // a = a + 5;
+        // document.write( "<br>" + a );
         // 전위(복합대입연산자) - a+=5 <- a = a + 5 일때 먼저 계산이 되는 +가 = 앞에 와야한다. (대입연산자에 저장하기 위해 왼쪽으로 보낸다)
         // 중위(일반적인연산자) - 10+8-7 보통 쓰이는 계산식 , 연산자가 중간에 있다
         // 후위() - 
         // 백엔드로 가기 위해 필히 공부 해야하는 것들
 
         // 증감연산자 : ++, -- ( 1증가 1감소만 가능)
-        var num1 = 20;
-        num1++;
-        console.log(num1);
-        num1--;
-        console.log(num1);
+        // var num1 = 20;
+        // num1++;
+        // console.log(num1);
+        // num1--;
+        // console.log(num1);
         // 증감연산자가 적용이 안되는 경우
         //num1++; - 기본적으로 쓰이는 경우
         // console.log(++num1); - 우선순위가 낮은 경우
@@ -94,23 +94,122 @@
         // 비교연산자 : > , < , >= , <= , ==(다르지않다) , ===(문자열과는 같지 않지만 숫자일땐 같다.) , !=(같지않다)
         // 비교를 하기위한 연산자 , 비교연산자의 결과 값은 참 또는 거짓
         // == : 데이터 종류를 따지지 않을때 사용 , === : 데이터 종류를 따질때 사용 
-        console.log(" > :" + (10>5));
-        console.log(" < :" + (11<5));
-        console.log(" >= :" + (10>=10));
-        console.log(" >= :" + (10>=11));
-        console.log(" <= :" + (20<=20));
-        console.log(" <= :" + (20<=10));
-        console.log(" == :" + (30==10));
-        console.log(" == :" + (30==30));
-        console.log(" == :" + ("30"==30));
-        console.log(" == :" + ("30"=="30"));
-        console.log(" === :" + (51===20));
-        console.log(" === :" + (50===50));
-        console.log(" === :" + ("50"===50));
-        console.log(" === :" + ("50"==="50"));
-        console.log(" != :" + (40!=40));
-        console.log(" != :" + (40!=42));
-        console.log(" != :" + (40!="42"));
+        // console.log(" > :" + (10>5));
+        // console.log(" < :" + (11<5));
+        // console.log(" >= :" + (10>=10));
+        // console.log(" >= :" + (10>=11));
+        // console.log(" <= :" + (20<=20));
+        // console.log(" <= :" + (20<=10));
+        // console.log(" == :" + (30==10));
+        // console.log(" == :" + (30==30));
+        // console.log(" == :" + ("30"==30));
+        // console.log(" == :" + ("30"=="30"));
+        // console.log(" === :" + (51===20));
+        // console.log(" === :" + (50===50));
+        // console.log(" === :" + ("50"===50));
+        // console.log(" === :" + ("50"==="50"));
+        // console.log(" != :" + (40!=40));
+        // console.log(" != :" + (40!=42));
+        // console.log(" != :" + (40!="42"));
+
+
+        // 조건연산자(삼항연산자)
+        // (조건식) ? 조건식이 참일경우 내용 : 조건식이 거짓일경우 내용 ;
+
+        // var num = 10 ;
+        // (10 > num) ? console.log("10이" + num + "보다 크다.") : console.log("10이" + num + "보다 작다.")
+
+        // var tall = parseInt( prompt("당신의 키는"));
+        // // ( tall >= 130) ? console.log("탑승가능") : console.log("탑승불가능");
+        // var result = (tall>130) ? "탑승가능" : "탑승불가능";
+        // console.log(result);
+
+        // // 10과 8을 비교하여 두 수 중에서 큰수를 출력하시오
+        // var result = ( 10 > 8 ) ? 10 : 8;
+        // console.log("두수중 큰 수는 : " + result);
+
+        // var num1 = parseInt( prompt("첫번째 정수 입력"));
+        // var num2 = parseInt( prompt("두번째 정수 입력"));
+        // var big = (num1>num2) ? num1 : num2;
+        // console.log( "가장 큰 수는 : " + big );
+
+        // 두 개의 정수를 입력받고, 두수 중에서 가장 작은수를 출력하시오
+        // var num1 = parseInt( prompt("첫번째 정수"));
+        // var num2 = parseInt( prompt("두번째 정수"));
+        
+        // var small = (num1<num2) ? num1 : num2;
+        // console.log("두수 중 작은 수 : " + small);
+
+        // 생년월일을 입력하여 성인 인지 아닌지 판별하기
+        // var birth = parseInt( prompt("생년월일 8자 입력"));
+        // 19991212 -> 19991212/10000 -> parseInt(1999.1212)
+        // 3 , 4 , 6 , 7 ->3*1000 + 4*100 + 6*10 + 7 3467
+        // var age = 2023 - parseInt(birth/10000);
+        // var result = ( age >= 19) ? "성인 입니다." : "성인이 아닙니다.";
+        // console.log(result);
+        
+        // var num1 = parseInt( prompt("10, 100, 50 중 하나만 입력"));
+        
+        // var result = ( num1 == 10 ) ? 10 : "다르게";
+        // result = ( num1 == 100 ) ? 100 : result;
+        // result = ( num1 == 50 ) ? 50 : result;
+        // console.log("당신은 " + result + " 입력했습니다.");
+        
+        // 국어, 영어 2과목 점수 입력받기
+        // 2과목의 평균점수가 65점 이상이면 통과 라고 출력
+        // 65점 미만이면 낙제 라고 출력
+
+        // var kor = parseInt( prompt("국어 점수 입력"));
+        // var en = parseInt( prompt("영어 점수 입력"));
+        // var result = (kor + en) / 2;
+        // total = ( result >= 65 ) ? "통과" : "낙제";
+        // console.log("당신은 " + parseInt(result) + "점 으로 " + total + " 하였습니다.");
+
+        // 노트북을 사고싶다. 두대의 노트북을 장바구니에 담아놓았다.
+        // 1번 노트북의 가격은 1290000원이다.
+        // 2번 노트북의 가격은 1854000원이다.
+        // 현재 내 통장의 잔고를 입력하여
+        // 몇번째 노트북 구매가 가능한지 또는 두개 전부 구매가 불가능한지 출력
+
+        // var bank = parseInt( prompt("통장 잔고를 입력 하세요"));
+
+        // var by = ( bank >= 1290000 ) ? "1번 노트북 구매 가능" : "구매 불가능";
+        // var by = ( bank >= 1854000 ) ? "2번 노트북 구매 가능" : by;
+        // console.log("현재 잔고로는 " + by + " 입니다.");
+
+        // 세개의 정수를 입력 받으세요
+        // 세정수 중에서 가장 큰수만 출력
+        // (두개의 숫자가 같은숫자라면 그래도 큰숫자 출력)
+        // 단, 세개의 정수가 모두 같은숫자라면 모두 같다 라고 만 출력
+
+        // var num1 = parseInt(prompt("첫번재 숫자를 입력 해주세요"));
+        // var num2 = parseInt(prompt("두번재 숫자를 입력 해주세요"));
+        // var num3 = parseInt(prompt("세번재 숫자를 입력 해주세요"));
+
+        // // 가장 큰수 찾는 곳
+        // var big = (num1 > num2) ? num1 : num2;
+        // big = ( big > num3) ? big : num3;
+        
+        // // 모두 같은숫자인지 판별하는 곳
+        // var same = (num1 == num2) ? num1 : 0;
+        // same = (same == num3) ? 1 : 0;
+
+        // var result = (same == 1) ? "모두 같다" : "가장 큰수 : " + big;
+        // console.log( result );
+        
+        // 0~9 까지의 범위의 숫자를 랜덤하게 나오게 한다.
+        // 원하는 범위를 설정하고 싶으면 가장 낮게 나오는 기준을 + 해야한다.
+        // 원하는 범위를 설정하고 싶으면 가장 높은 값에서 가장 낮은 값을 뺀 후 + 1를 한 후 곱해야 한다.
+        // 7 ~ 26 -> 26-7 = 19 + 1 = 20, random()*20+7
+        var coin = parseInt(Math.random()*2);
+        // 0. 앞면 1. 뒷면
+        var user = parseInt(prompt("0-앞면, 1-뒷면"));
+        var result = ( coin != user ) ? "틀림" : "정답";
+        console.log(result);
+
+
+        
+
 
 
     </script>
