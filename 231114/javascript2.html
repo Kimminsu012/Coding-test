@@ -3,7 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>변수 2</title>
+
+    <script type="text/javascript">
+
+        // 데이터의 종류는 숫자데이터와 문자데이터
+        // 숫자데이터는 정수데이터, 실수데이터
+        // 문자데이터 - 자바스크립트에서는 문자열데이터이다.
+        // 문자열데이터를 직접 작성할시에는 반드시 " "(큰 따옴표), ' '(작은 따옴표) 감싸기
+        // 변수는 데이터를 저장하고 사용하기위해 생성한다.
+        // 변수생성 방법
+        // 1. 타입(범위) 지정 - var, let, const 
+        // 2. 변수 이름 정하기 - 변수의 목적에 맞는 이름으로 카멜표기법, 스네이크표기법 으로 작성
+        // 카멜 표기법 - iLoveHtml (단어가 바뀌는 앞 부분에 대문자)
+        // 스네이크 표기법 - i_love_html (단어가 바뀌는 앞 부분에 언더바)
+        // 3. 초기 데이터 저장 - 대입연산자(=)로 변수에 처음에 저장할 데이터를 저장
+        // 4. var iLoveHtml = 0; (변수 생성)
+
+        // var birthYear = parseInt( prompt("태어난년도"));
+        // var age = 2023 - birthYear; // 나이구하기
+        // document.write("태어난 년도 : " + birthYear + "년 , 나이 : " + age + "살 <br>");
+
+        // parseInt() - 정수로 변환 , parseFloat() - 실수로 변환
+        // 계산시 실수가 나온다면 계산앞에 parseInt를 붙이면 정수만 나오게 된다.
+        // var apple = 35; // 사과 35개
+        // var per = parseInt(prompt("인원수"));
+        // document.write("총인원 : " + per + "명 , 1인당 사과 : " + parseInt(apple/per) + "개<br>");
+
+        // 원의 반지름을 입력하여 넓이를 구하여 출력하기
+        // 넓이 구하는 식 : 반지름*반지름*3.14 , 넓이는 정수만 출력
+
+        // var radius = parseFloat(prompt("반지름을 적으시오."));
+        // var area = radius*radius*3.14;
+        // document.write( "반지름 : " + radius + "인 원의 넓이는 : " + parseInt(area) + "입니다.");
+
+        // 국어, 수학, 역사 3과목의 점수를 각각 입력 받기
+        // 총점과 평균을 출력 하기,  평균은 정수만 출력
+
+        // var kor = parseInt( prompt( "국어 점수를 입력" ) );
+        // var mat = parseInt( prompt( "수학 점수를 입력" ) );
+        // var his = parseInt( prompt( "역사 점수를 입력" ) );
+
+        // var total = kor+mat+his; // 총점 계산하기
+        // var average = parseInt( total/3 ); // 총 과목이 3과목이니 나누기 
+
+        // document.write( "총점은 : " + total + "점, 평균은 : " + average + "점");
+
+        // 연산자
+        // 대입연산자 : = , 오른쪽에 데이터를 왼쪽에 저장
+        // 사칙연산자 : + , - , * , / , % , **(거듭제곱 2^4)
+        var num1 = 24;
+        var num2 = 7;
+        document.write( " + 연산자 : " + (num1+num2) );
+        document.write( "<br> - 연산자 : " + (num1-num2) );
+        document.write( "<br> * 연산자 : " + (num1*num2) );
+        document.write( "<br> / 연산자 : " + (num1/num2) );
+        document.write( "<br> % 연산자 : " + (num1%num2) ); // 나머지값이 나온다.
+        document.write( "<br> ** 연산자 : " + (2**8) );
+
+        // 복합대입연산자 : += , -= , *= , /= , %=
+        var a = 10;
+        a+=5; // a = a + 5;
+        document.write( "<br>" + a );
+        // 전위(복합대입연산자) - a+=5 <- a = a + 5 일때 먼저 계산이 되는 +가 = 앞에 와야한다. (대입연산자에 저장하기 위해 왼쪽으로 보낸다)
+        // 중위(일반적인연산자) - 10+8-7 보통 쓰이는 계산식 , 연산자가 중간에 있다
+        // 후위() - 
+        // 백엔드로 가기 위해 필히 공부 해야하는 것들
+
+        // 증감연산자 : ++, -- ( 1증가 1감소만 가능)
+        var num1 = 20;
+        num1++;
+        console.log(num1);
+        num1--;
+        console.log(num1);
+        // 증감연산자가 적용이 안되는 경우
+        //num1++; - 기본적으로 쓰이는 경우
+        // console.log(++num1); - 우선순위가 낮은 경우
+        // console.log(num1++); - 우선순위가 높은 경우
+        
+        // 증감연산자의 우선순위는 2곳에 있다. 어떤 경우엔 높고 어떤 경우엔 낮다.
+        // 증감연산자는 변수의 앞에 있을때 우선순위가 높게 되고 변수의 뒤에 있을때 우선순위가 낮게 된다.
+        // 연산자 우선순위 : () -> [] -> . -> '->' -> ++ = -- -> ~~~ -> ++ = --
+
+        // a = 10;
+        // b = a++;
+        // b에 저장되는 식의 풀이 : b = a; -> a = a + 1;
+        // b = ++a;
+        // b에 저장되는 식의 풀이 : a = a + 1; -> b = a;
+
+        // 비교연산자 : > , < , >= , <= , ==(다르지않다) , ===(문자열과는 같지 않지만 숫자일땐 같다.) , !=(같지않다)
+        // 비교를 하기위한 연산자 , 비교연산자의 결과 값은 참 또는 거짓
+        // == : 데이터 종류를 따지지 않을때 사용 , === : 데이터 종류를 따질때 사용 
+        console.log(" > :" + (10>5));
+        console.log(" < :" + (11<5));
+        console.log(" >= :" + (10>=10));
+        console.log(" >= :" + (10>=11));
+        console.log(" <= :" + (20<=20));
+        console.log(" <= :" + (20<=10));
+        console.log(" == :" + (30==10));
+        console.log(" == :" + (30==30));
+        console.log(" == :" + ("30"==30));
+        console.log(" == :" + ("30"=="30"));
+        console.log(" === :" + (51===20));
+        console.log(" === :" + (50===50));
+        console.log(" === :" + ("50"===50));
+        console.log(" === :" + ("50"==="50"));
+        console.log(" != :" + (40!=40));
+        console.log(" != :" + (40!=42));
+        console.log(" != :" + (40!="42"));
+
+
+    </script>
+
 </head>
 <body>
     
