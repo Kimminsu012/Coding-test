@@ -19,10 +19,13 @@
         var com = parseInt(Math.random()*6+1);
         var user = parseInt(Math.random()*6+1);
         
-        var ho = (com > user) ? "패배" : "승리";
-        ho = (com == user) ? "비김" : ho;
-
-        console.log("사용자 " + ho);
+        // var ho = (com > user) ? "패배" : "승리";
+        // ho = (com == user) ? "비김" : ho;
+        // console.log("사용자 " + ho);
+        
+        var result = (user > com) ? "승리" : (user==com) ? "비김" : "패배";
+        console.log("나 : " + user + " 컴 : " + com + " 결과 : " + result);
+        
 
 
 
