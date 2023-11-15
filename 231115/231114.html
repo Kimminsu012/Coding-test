@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+
+        // 1. 소주 한잔을 마시면 수명이 2분 단축된다.
+        //    어떤 사람이 소주를 매일 같은 양으로 20년을 마셨다.
+        //    이사람이 하루에 몇잔의 소주를 마시는지 입력 받기
+        //    총 단축된 수명이 몇분인가?
+        //    총 단축된 수명이 몇시간인가? (정수만출력)
+        //    총 단축된 수명이 몇일인가? (정수만출력)
+        
+        // var so = parseInt(prompt("몇잔의 소주를 마셨는지 입력 하세요"));
+
+        // var life = so * 2 * 365 * 20;
+        // console.log("총 단축된 수명 : " + life + "(분)");
+        // console.log("총 단축된 수명 : " + (parseInt( life / 60 )) + "(시간)");
+        // console.log("총 단축된 수명 : " + (parseInt( life / 60 / 24 )) + "(일)");
+
+        // var min = parseInt(so * 7300 * 2 );
+        // var hou = parseInt(min / 60 );
+        // var day = parseInt(hou / 24 );
+        // console.log(min + "분 " + hou + " 시간 " + day + "일");
+
+        // 2. 주사위게임
+        //    컴퓨터와 나는 각자 주사위를 두개씩 던진다.
+        //    주사위의 합이 큰쪽이 이긴다.
+        //    내가 이겼는지 졌는지 비겼는지 출력하기
+        //    단, 두개의 주사위 값이 1이 나오면 무조건 이긴다.
+
+        // var user1 = parseInt(Math.random()*6+1);
+        // var user2 = parseInt(Math.random()*6+1);
+        // var com1 = parseInt(Math.random()*6+1);
+        // var com2 = parseInt(Math.random()*6+1);
+        
+        // var user = user1 + user2;
+        // var com = com1 + com2;
+
+        // var result = (user > com ? "이김" : (user == com) ? "비김" : "패배" );
+        // result = (user == 2) ? "승리" : (com == 2) ? "패배" : result;
+        // console.log("사용자 1의 주사위 : " + user1 + " 사용자 2의 주사위 : " + user2);
+        // console.log("컴퓨터 1의 주사위 : " + com1 + " 컴퓨터 2의 주사위 : " + com2);
+        // console.log("사용자의 합산 : " + (user));
+        // console.log("컴퓨터의 합산 : " + (com));
+        // console.log("사용자의 결과값 : " +  result);
+        // console.log("사용자의 주사위 중 1이 나오거나 합이 높게 나오면 승리");
+        // console.log(`컴퓨터 : (${com1},${com2}) , 나 : (${user1},${user2}) , 결과 ${result}`);
+        // `` : 백틱을 사용할려면 커맨드를 입력 할때 ${} 이 안에 입력을 해야한다.
+
+        // 3. 주차비 정산
+        //    기본 주차비 - 1000원, 기본 시간 - 30분
+        //    ( 30분 이내 주차시 1000원 , 5분 주차해도 1000원, 39분까지 1000원)
+        //    10분당 100원씩 추가 ( 40분 주차시 1100원, 54분 주차시 1200원)
+        //    2시간 이상 주차시 기본요금 변경
+        //    기본요금 - 1500원
+        //    (2시간 1분주차시 - 1500원, 2시간 34분 주차시 - 1800원)
+        //    주차시간을 분다위로 입력하여 주차요금이 얼마인지 출력하시오
+        
+
+
+        
+
+        var time = parseInt(prompt("주차 시간을 입력해주세요"));
+        
+        var money = (time > 30 ) ? parseInt((time - 30)/10) : 0;
+        var result = (time < 120) ? (money*100)+1000 : (money-9)*100+1500 ; 
+        
+
+        console.log(time + "분 " + result + "원");
+
+        var cost = 1000;
+        // 39 - 30 = 9 / 10 = 0.9
+        
+        cost = (time >= 120) ? 1500 : cost;
+
+        
+        time = (time >= 120) ? time-120 : (time>=30) ? time-30 : 0;
+
+
+        var price = parseInt(time/10) * 100 + cost;
+        console.log(`주차요금 : ${price}원`);
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
