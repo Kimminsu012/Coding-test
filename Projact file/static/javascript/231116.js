@@ -15,5 +15,27 @@
 // 주차시간을 분단위로 입력하여 주차요금이 얼마인지 출력하시오
 
 
-var min = parseInt(pormpt("주차한 시간을 입력 하시오 (분단위)"));
-var par = 1000;
+var min = parseInt(prompt("주차한 시간을 입력 하시오 (분단위)"));
+
+var money = 1000
+
+if( min <= 30 ){
+    document.write(money) ;
+}else if( ((min > 30)/10) && (min < 120) ){
+    min = parseInt(min-30);
+    money = parseInt(min / 10) * 100 + money;
+    document.write(money) ;
+    }else if( ( min >= 120 ) && ( min < 240 )){
+        min = parseInt(min-120);
+        money = 1500;
+        money = parseInt(min / 10) * 100 + money;
+        document.write(money) ;
+    }else if( (min >= 240) && (min < 480)){
+        min = parseInt(min-240);
+        money = 2500
+        money = parseInt(min / 10) * 100 + money;
+        document.write(money);
+    }else if( min >= 480){
+        money = 10000
+        document.write(money);
+}
