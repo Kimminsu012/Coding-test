@@ -89,17 +89,59 @@ if( 조건식 ){
 // 1. 첫번째 id 가져오는 방법
 // document.getElementById(""); - 매번 선택을 할때마다 똑같이 써야한다.
 // 변수에 저장을 하면 짧게 사용이 가능하다.
-window.onload=function(){
+var com = Math.floor(Math.random()*3)+1;
 
-    document.getElementById("scissors");
-    document.getElementById("rock");
-    document.getElementById("paper");
+window.onload=function(){
 
     // 가위 바위 보 게임 만들기
     // 1. 가위 2. 바위 3. 보
     
-    // var com = Math.floor(Math.random()*3)+1;
+    
     // var you = parseInt(prompt("1.가위 2.바위 3.보"));
+
+    var sci = document.getElementById("scissors");
+    var roc = document.getElementById("rock");
+    var pap = document.getElementById("paper");
+
+    sci.addEventListener("click",function(){    // 가위 클릭
+        if( com == 1 ){
+            alert("비김");
+        }else if( com == 3 ){
+            alert("이김");
+        }else{
+            alert("패배");
+        }
+        com = Math.floor(Math.random()*3)+1;
+        sci.style.backgroundColor="black";
+        roc.style.backgroundColor="white";
+        pap.style.backgroundColor="white";
+    });
+    roc.addEventListener("click",function(){    // 바위 클릭
+        if( com == 2 ){
+            alert("비김");
+        }else if( com == 1 ){
+            alert("이김");
+        }else{
+            alert("패배");
+        }
+        com = Math.floor(Math.random()*3)+1;
+        sci.style.backgroundColor="white";
+        roc.style.backgroundColor="black";
+        pap.style.backgroundColor="white";
+    });
+    pap.addEventListener("click",function(){    // 보 클릭
+        if( com == 3 ){
+            alert("비김");
+        }else if( com == 2 ){
+            alert("이김");
+        }else{
+            alert("패배");
+        }
+        com = Math.floor(Math.random()*3)+1;
+        sci.style.backgroundColor="white";
+        roc.style.backgroundColor="white";
+        pap.style.backgroundColor="black";
+    });
 
     // if ( you == com ){
     //     alert("비겼습니다");
