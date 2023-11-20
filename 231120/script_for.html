@@ -214,25 +214,53 @@
 
 
         
-        var user = 2023 - parseInt(prompt("나이를 입력 하시오 (20살 이상만)"));
+        // var user = 0;
+        // for(; !(20<=user && user<=73) ;){ // user<20 || user>73 20미만 또는 73초과 일시 재입력
+        // user = parseInt(prompt("나이를 입력 하시오 (20살 이상만)"));
+        // }
+        // var age = 2023 - user;
+        // var som = 0;
+        // for( ; true ; ){
+        //     var yeer = Math.floor(Math.random()*54)+1950;
+        //     som++;
+        //     if(yeer==age){
+        //         document.write("출생년도 : " + age);
+        //         break;
+        //     }
+        // }
+        // document.write("<br>" + som);
+
+        // var com = Math.floor(Math.random()*50)+1;
+        // for(;true;){
+        //     var user = parseInt(prompt("업다운 게임"));
+        //     if( user > com){
+        //         alert("다운");
+        //     }
+        //     if( user < com){
+        //         alert("업");
+        //     }
+        //     if( user == com){
+        //         alert("동일");
+        //         break;
+        //     }
+        // }
+
+        
+
+        // for(var i=1; i<9; i++) == for(var i=1; i<=9-1; i++)
+        // 문자열의 알파벳 위치 번호 -> 위치번호를 프로그래밍에서는 인덱스라고 한다.
+
+
+        var word = "international prototype";
+        // 지정한 알파벳의 갯수가 몇개인지 구하기
+        var alp="o";
         var som = 0;
-        for( ; true ; ){
-            var yeer = Math.floor(Math.random()*54)+1950;
-            som++;
-            if(yeer==user){
-                document.write("출생년도 : " + user);
-                break;
+        for( var i=0; i < word.length; i++){
+            if(word.charAt(i) === alp){
+                som++;
             }
         }
-        document.write("<br>" + som);
-
-
-
-
-
-
-
-
+        document.write(`${alp} 알파벳은 총 ${som}개 있다.`)
 
 
 
