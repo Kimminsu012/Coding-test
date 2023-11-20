@@ -263,7 +263,17 @@
         document.write(`${alp} 알파벳은 총 ${som}개 있다.`)
 
 
-
+        for( var i=1; i<=100; i++){
+            if( i%3==0 && i%10==0){
+                document.write("<div> pizzle buzzle </div>");
+            }
+            else if( i%3 == 0 ){
+                document.write("<div> pizzle </div> " );
+            }else if( i%10 == 0 ){
+                document.write("<div> buzzle </div>");
+            }else 
+            document.write(i+" ");
+        }
 
 
 

@@ -9,24 +9,24 @@
         // 과제 내용 : 내가 입력한 값을 컴퓨터가 랜덤 숫자를 입력하여 업 다운을 한 후 맞추는것
 
         
-        // var user = parseInt(prompt("1~50 랜덤값 입력"));
-        // var som = 0;
-        // for(;true;){
-        //     com = Math.floor(Math.random()*50)+1;
-        //     if( com < user){
-        //         alert("업");
-        //         com = com + 10;
-        //         som++;
-        //     }else if( com > user){
-        //         alert("다운");
-        //         com = com - 1;
-        //         som++;
-        //     }
-        //     if( com == user){
-        //         alert("정답");
-        //         break;
-        //     }
-        // }document.write(som);
+        var user = parseInt(prompt("1~50 랜덤값 입력"));
+        var som = 0;
+        for(;true;){
+            com = Math.floor(Math.random()*50)+1;
+            if( com < user){
+                alert("업");
+                com = com + 10;
+                som++;
+            }else if( com > user){
+                alert("다운");
+                com = com - 1;
+                som++;
+            }
+            if( com == user){
+                alert("정답");
+                break;
+            }
+        }document.write(som);
     </script>
 
 
