@@ -6,27 +6,85 @@
     <title>Document</title>
 
     <script>
-        // 과제 내용 : 내가 입력한 값을 컴퓨터가 랜덤 숫자를 입력하여 업 다운을 한 후 맞추는것
+        // 과제 내용 : 내가 입력한 값을 컴퓨터가 랜덤 숫자를 입력하여 
+        // 업 다운을 한 후 맞추는것
 
         
         var user = parseInt(prompt("1~50 랜덤값 입력"));
+        var com = Math.floor(Math.random()*50)+1;
         var som = 0;
+        user = parseInt(user / 10);
+        com = parseInt(com / 10);
+
         for(;true;){
-            com = Math.floor(Math.random()*50)+1;
-            if( com < user){
-                alert("업");
-                com = com + 10;
-                som++;
-            }else if( com > user){
-                alert("다운");
+            if(com > user){
+                alert("다운")
                 com = com - 1;
                 som++;
-            }
-            if( com == user){
-                alert("정답");
+            }else if(com < user){
+                alert("업");
+                com = com + 1
+                som++;
+            }else{
+                document.write("동일")
                 break;
             }
-        }document.write(som);
+        }document.write("돌린 횟수 : " + som);
+        
+
+
+
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        // for(;true;){
+        //     if( (com < user) && (com > 10) ){
+        //         alert("업");
+        //         com = com + 1;
+        //         som++;
+        //     }
+        //     else if( (com < user) && (com > 20) ){
+        //         alert("업");
+        //         com = com + 1;
+        //         som++;
+        //     }
+        //     else if( (com < user) && (com > 30) ){
+        //         alert("업");
+        //         com = com + 1;
+        //         som++;
+        //     }
+        //     else if( (com < user) && (com > 40) ){
+        //         alert("업");
+        //         com = com + 1;
+        //         som++;
+        //     }
+        //     else if( (com > user) && (com < 50) ){
+        //         alert("다운");
+        //         com = com - 1;
+        //         som++;
+        //     }
+        //     if( com == user){
+        //         alert("정답");
+        //         break;
+        //     }
+        // }document.write("돌린 횟수 : " + som + "<br>유저 값 : " + user + "컴퓨터값 : " + com);
     </script>
 
 
