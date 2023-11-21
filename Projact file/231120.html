@@ -10,34 +10,52 @@
         // 업 다운을 한 후 맞추는것
 
         
-        var user = parseInt(prompt("1~50 랜덤값 입력"));
-        var com = Math.floor(Math.random()*50)+1;
-        var som = 0;
-        user = parseInt(user / 10);
-        com = parseInt(com / 10);
+        // var user = parseInt(prompt("1~50 랜덤값 입력"));
+        // var com1 = 50;
+        // var com = Math.floor(Math.random()*com1)+1;
+        // var som = 0;
+        // user = parseInt(user / 10);
+        // com = parseInt(com / 10);
 
-        for(;true;){
-            if(com > user){
-                alert("다운")
-                com = com - 1;
-                som++;
-            }else if(com < user){
-                alert("업");
-                com = com + 1;
-                som++;
-            }else{
-                document.write("동일")
-                break;
+        // for(;true;){
+        //     if(com > user){
+        //         alert("다운")
+        //         com = com - 1;
+        //         som++;
+        //     }else if(com < user){
+        //         alert("업");
+        //         com = com + 1;
+        //         som++;
+        //     }else{
+        //         document.write("동일")
+        //         break;
+        //     }
+        // }document.write("<br> 돌린 횟수 : " + som);
+        
+        // 과제 풀이
+
+        var user=0;
+        for(;!(1<=user && user<=51);){
+            user = parseInt(prompt("1~50입력"));
+        }
+
+        var a=50, b=1, max=50;
+        for(;;){
+            var com = Math.floor(Math.random()*a)+b;
+            if(user < com){
+                document.write(`다운 (com:${com} , 범위 : ${b}~${max}) <br>`);
+                a = com - 1 - b + 1;
+                max = com-1;
             }
-        }document.write("<br> 돌린 횟수 : " + som);
-        
-
-
-
-
-        
-        
-        
+            if(user > com){
+                document.write(`업 (com:${com} , 범위 : ${b}~${max}) <br>`);
+                b = com+1;
+                a = max-b+1;
+            }
+            if(user == com){
+                document.write("정답");break;
+            }
+        }
         
         
         
