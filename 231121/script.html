@@ -6,7 +6,179 @@
     <title>Document</title>
 
     <script>
+
+        // for( var i=1; i<=10; i++){
+        //     document.write(i+" ");
+        // }
+        // document.write("<br>");
         
+        // var i=1;
+        // while( i<=10 ){
+        //     document.write(i + " ");
+        //     i++;
+        // }
+        // document.write("<br>");
+
+        // // for문 - 반복횟수가 정해진 경우에 사용
+        // // while문 - 반복횟수가 정해지지 않은 경우에 사용
+        // // for문 과 while문 무한루프식
+        // // for(;true;){}
+        // // while(true){}
+
+        // //  for(var i=1; i<=9; i++)
+        // //      document.write(`5 * ${i} = ${5 * i} <br>`);
+
+        // var i=1;
+        // while(i<=9){
+        //     document.write(`5 * ${i} = ${5 * i} <br>`);
+        //     i++;
+        // }
+
+
+        // // 1부터 10까지 총합 구하기
+        
+        // var i=1;
+        // var som=0;
+
+        // while(i<=10){
+        //     som = som + i;
+        //     i++;
+        // }
+        // document.write(som + "<br>");
+
+
+        // for(var i=1; i<=3; i++){
+        //     for(var k=1; k<=2; k++){
+        //         document.write(`${i}  ${k} <br>`);
+        //     }
+        // }
+
+        // var i=1;
+        // var k=1;
+        // while(i<=3){
+        //     k=1;
+        //     while(k<=2){
+        //         document.write(`${i}  ${k} <br>`)
+        //         k++;
+        //     }
+        //     i++;
+        // }
+
+
+        // 지금현재 시점에서 반복문 구구단 2단부터 9단까지 출력하는거
+        // for문과 while문으로 구현하고 어떻게 동작하는지 이해 된다면
+        // 반복문 기초는 끝! 나머지는 응용
+
+        // var i=1;
+        // var k=1;
+        // while(i<=9){
+        //     k=1;
+        //     while(k<=9){
+        //         document.write(`${i} * ${k} = ${i * k} <br>`);
+        //         k++;
+        //     }
+        //     i++;
+        // }
+
+        // // for(;true;){
+        // //     var num=parseInt(prompt("숫자입력"));
+        // //     if(num==0) break;
+        // // }
+
+
+
+        // while(true){
+        //     var num=parseInt(prompt("숫자입력"));
+        //     if(num==0) break;
+        // }
+
+
+
+        // var word="요즘날씨가 많이추워졌죠?";
+        // var len = word.length;
+        // while( len!=-1 ){
+        //     document.write( word.charAt(len--) );
+        // }
+
+
+        // 베스킨 라빈스 31 게임
+        // 31입력하면 패배
+        // 입력할수 있는 숫자의 갯수는 최대 3개
+        // 몇개의 숫자를 제시할꺼냐 를 입력 받아서 진행
+
+
+        // var user=0, com=0, 베라=1;
+        // var flag=false; // 게임을 끝내기 위한 변수
+        // while(true){
+        //     var out=""; // 화면에 진행 내용을 저장할 변수
+        //     user = parseInt(prompt("숫자 몇개?"));
+        //     out +="나 : ";
+        //     for( var u=1; u<=user; u++){
+        //         out +=`${베라++}`;
+        //         if(베라>31){ flag=true; break; }
+        //     }
+        //     out += "\n";
+        //     alert(out);
+        //     if(flag) break;
+        //     com = Math.floor(Math.random()*3)+1;
+        //     out ="컴 : ";
+        //     for( var c=1; c<=com; c++){
+        //         out += `${베라++}`;
+        //         if(베라>31){ flag=true; break; }
+        //     }
+        //     out += "\n";
+        //     alert(out);
+        //     if(flag) break;
+        // }
+
+
+        // do~while ;
+        // for, while 기본 동작 순서
+        //  초기값 -> 조건식비교 -> 참이라면 -> { 내용 } -> 증감식
+        //      -> 조건식비교 -> 참 -> { 내용 } -> 증감식 -> 조건식비교 -> 참 -> ....
+        //      -> 조건식비교 -> 거짓이라면 -> 반복문 종료
+        // do~while     초기값 -> { 내용 } -> 증감식 -> 조건식 비교
+
+
+        for(var i =10; i<=5; i++){
+            document.write(i+" for문 ");
+        }
+
+
+        var i = 10;
+        do{
+            document.write(i+" do~while ");
+        }while( i <=5 );
+
+
+        var user = 0;
+        do{
+            user = parseInt(prompt("1~50입력"));
+        }while( !(user >= 1 && user <= 50) );
+
+
+        
+        for(; !(user >= 1 && user <= 50 );){
+            user = parseInt(prompt("1~50입력"));
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     </script>
 
 
