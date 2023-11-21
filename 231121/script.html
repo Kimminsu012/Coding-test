@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script>
 
         // for( var i=1; i<=10; i++){
@@ -140,33 +140,174 @@
         // do~while     초기값 -> { 내용 } -> 증감식 -> 조건식 비교
 
 
-        for(var i =10; i<=5; i++){
-            document.write(i+" for문 ");
-        }
+        // for(var i =10; i<=5; i++){
+        //     document.write(i+" for문 ");
+        // }
 
 
-        var i = 10;
-        do{
-            document.write(i+" do~while ");
-        }while( i <=5 );
+        // var i = 10;
+        // do{
+        //     document.write(i+" do~while ");
+        // }while( i <=5 );
 
 
-        var user = 0;
-        do{
-            user = parseInt(prompt("1~50입력"));
-        }while( !(user >= 1 && user <= 50) );
+        // var user = 0;
+        // do{
+        //     user = parseInt(prompt("1~50입력"));
+        // }while( !(user >= 1 && user <= 50) );
 
 
         
-        for(; !(user >= 1 && user <= 50 );){
-            user = parseInt(prompt("1~50입력"));
+        // for(; !(user >= 1 && user <= 50 );){
+        //     user = parseInt(prompt("1~50입력"));
+        // }
+
+
+// 숫자 맞추기
+    // 숫자를 총 세개 입력한다.
+    // 입력한 숫자를 랜덤으로 일차하는 숫자 찾기 
+
+
+
+    
+
+
+    
+    // function find(){
+        
+    //     var num1 = Number( $("#num1").val() );
+    //     var num2 = Number( $("#num2").val() );
+    //     var num3 = Number( $("#num3").val() );
+    //     var count = 0;
+    //     while(true){
+    //         var ok = 0; // 숫자 하나씩 일치 할때마다 값 증가, 3이 되면 3개 숫자 모두 일치
+    //         var a = Math.floor(Math.random()*45)+1; // 1~45
+    //         var b = Math.floor(Math.random()*45)+1; 
+    //         var c = Math.floor(Math.random()*45)+1;
+    //         if(num1 == a || num1 == b || num1 == c ) ok++;
+    //         if(num2 == a || num2 == b || num2 == c ) ok++;
+    //         if(num3 == a || num3 == b || num3 == c ) ok++;
+    //         count++; // 세개의 숫자에 대해 일치여부를 검사했으니 카운팅 1씩 증가
+    //         if(ok == 3){
+    //                 $("#result").html(`세개 숫자 일치까지 <b>${count}<b>번 동작`)
+    //                 break;
+    //             }
+    //         }
+    //     }
+        
+    
+
+    // 4팀 : 김민수 , 노재홍 , 이다희
+    // 문제는 2문제 이고 2문제중 하나를 선택해서 풀면 된다.
+    /*
+    문제 1. 비밀번호 찾기
+    비밀번호 4개 숫자를 다음조건에 맞게 찾으세요
+    1. 각 숫자는 1~9사이의 값이다.
+    2. 4개의 숫자는 중복이 없다.
+    3. 1번째 숫자는 4번째 숫자보다 2만큼 크다.
+    4. 2번째 숫자는 3번재 숫자보다 작다.
+    5. 비밀번호숫자 + 비밀번호역순 숫자의 합은 16896이다.
+        예) 1234라면 1234 + 4321 = 5555
+    
+    // 문제 2. 숫자 야구 게임
+    // 랜덤값으로 3개의 숫자 뽑아내기 (중복없음)
+    // 랜덤 범위는 1~9
+    // 랜덤 숫자 3개 맞출때까지 계속 3개의 숫자를 입력 하기
+    // 랜덤숫자가 8 3 5 라면
+    // 1, 3, 5 를 입력시 출력 되는 내용은 1스트라이크 0볼 2아웃
+    // 2, 8, 6 을 입력시 출력 되는 내용은 0스트라이크 1볼 2아웃
+
+    */
+
+    // 1, num1 =num4 +2
+    // 2. num2 < num3
+    //3. num 1234 + num 4321 =16896
+
+
+
+
+    // var anwser = $("#anwser");
+    // var num1 = Math.floor(Math.random()*9)+1;
+    // var num2 = Math.floor(Math.random()*9)+1;
+    // var num3 = Math.floor(Math.random()*9)+1;
+    // var num4 = Math.floor(Math.random()*9)+1;
+
+
+    
+
+    // var numi = (num1 + num4)*1001;
+    // var numl = (num2 + num3)*110;
+    
+
+
+
+    // var count = 0;
+
+    // for(;true;){
+    //     num1 = Math.floor(Math.random()*9)+1;
+    //     num2 = Math.floor(Math.random()*9)+1;
+    //     num3 = Math.floor(Math.random()*9)+1;
+    //     num4 = Math.floor(Math.random()*9)+1;
+    //     if(num1==num2 && num2 == num3 && num3==num4){
+    //         if(num1!=num4+2){
+    //             num1++;
+    //             count++;
+    //         }else if(num1 > num4+2){
+    //             num4--;
+    //             count++;
+    //         }
+    //         if(num2>num3){
+    //             num2--;
+    //             count++;
+    //         }else if(num2 == num3){
+    //             num3++;
+    //             count++;
+    //         }
+    //     }
+    //     if(numi+numl != 16896){
+    //         break;
+    //         }
+        
+    // }document.write(`정답입니다 ${num1} ${num2} ${num3} ${num4} : ${numi} + ${numl} = ${numi+numl}`);
+            
+
+
+
+
+
+
+
+    // for(;true;){
+    //     if(num1 != num2 && num2 != num3 && num3 != num4 && num4 != num1 && (numi + numl) == 16896 ){
+    //         document.write(`오답입니다 ${num1} ${num2} ${num3} ${num4} ${count}`)
+            
+    //     }else{
+    //         document.write(`정답입니다 ${num1} ${num2} ${num3} ${num4} : ${numi} + ${numl} = ${numi+numl}`)
+    //         count++;
+    //         break;
+    //     }
+    // }
+
+
+    for(var a=1; a<=9; a++){
+        for(var b=1; b<=9; b++){
+            for(var c=1; c<=9; c++){
+                for(var d=1; d<=9; d++){
+                    if( a!=b && a!=c && a!=d && b!=c && b!=d && c!=d){
+                        if( a == d+2){
+                            if( b < c ){
+                                var num = a*1000+b*100+c*10+d;
+                                var temp = d*1000+c*100+b*10+a;
+                                if( num + temp == 16896){
+                                    alert(num);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
-
-
-
-
-
-
+    }
 
 
 
@@ -181,9 +322,28 @@
 
     </script>
 
+    <!-- <style>
+        input{
+            width: 50px;
+        }
+    </style> -->
+
 
 </head>
 <body>
     
+    <!-- <input type="text" id="num1">
+    <input type="text" id="num2">
+    <input type="text" id="num3">
+    <button onclick="find()">실행</button>
+    <div id="result"></div> -->
+
+    <!--  1. 9357 2. 9267-->
+        <!-- <input type="text" id="anwser"> -->
+        
+        
+
+
+
 </body>
 </html>
