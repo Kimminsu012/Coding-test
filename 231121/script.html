@@ -330,7 +330,8 @@
             if(n1==b2 || n1==b3) ball++;
             if(n2==b1 || n2==b3) ball++;
             if(n3==b1 || n3==b2) ball++;
-            show =+`${n1} ${n2} ${n3}  결과 : ${str}스트라이크 ${ball}볼 ${3-str-ball}아웃 <br>`;
+            show +=`${n1} ${n2} ${n3}  결과 : ${str}스트라이크 ${ball}볼 ${3-str-ball}아웃 <br>`;
+            if( str==3) show+="정답";
             $("#result").html(show);
         }
 
