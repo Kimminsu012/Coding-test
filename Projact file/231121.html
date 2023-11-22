@@ -28,34 +28,54 @@
 
 
         
-        var hie = 0, mid = 0, row = 0, baby = 0;
-        var count = 0;
-        for(;true;){
-            var age = parseInt(prompt("가족의 나이 입력"));
-            if(age>64){
-                hie++;
-                count++;
-            }
-            if(age>19 && age<65){
-                mid++;
-                count++;
-            }
-            if(age>7 && age<20){
-                row++;
-                count++;
-            }
-            if(age>0 && age<8){
-                baby++;
-                count++;
-            }
-            if(age==0){
-                break;
-            }
-        }document.write(`노인 ${hie} 명 , 성인 ${mid} 명 , 청소년 ${row} 명 , 아동 ${baby} 명 <br> 총 ${count} 명`);
+        // var hie = 0, mid = 0, row = 0, baby = 0;
+        // var count = 0;
+        // for(;true;){
+        //     var age = parseInt(prompt("가족의 나이 입력"));
+        //     if(age>64){
+        //         hie++;
+        //         count++;
+        //     }
+        //     if(age>19 && age<65){
+        //         mid++;
+        //         count++;
+        //     }
+        //     if(age>7 && age<20){
+        //         row++;
+        //         count++;
+        //     }
+        //     if(age>0 && age<8){
+        //         baby++;
+        //         count++;
+        //     }
+        //     if(age==0){
+            //         break;
+            //     }
+            // }document.write(`노인 ${hie} 명 , 성인 ${mid} 명 , 청소년 ${row} 명 , 아동 ${baby} 명 <br> 총 ${count} 명`);
         
+        var old = 0, adult = 0, teen = 0, child = 0, count = 0;
         
+        var end=true; // 구성원나이를 입력 가능 또는 입력 불가능 하게 만들기위한 변수
+
+        function survey(){
+            if(end){
+                var age = Number( $("#age").val() );
+                if(age>64) old++;
+                else if(age>19 && age<65) adult++;
+                else if(age>7 && age<20) teen++;
+                else if(age>0 && age<8) child++;
+                else if(age == 0){
+                    end=false;
+                    count--;
+                    }
+                }
+                count++;
+                $("#result").html(
+                    `총원 : ${count}명 <br>노인${old}명, 성인${adult}명, 청소년${teen}명, 아동${child}명`
+                );
+            }
         
-        
+        // linter 도구 - 자바스크립트 스타일 가이드를 얼마나 준수하게 작성 했는지 확인 및 개선, 제안
         
             
     
@@ -69,9 +89,17 @@
 
     </script>
 
+    <style>
+        input{
+            width: 50px;
+        }
+    </style>
+
 </head>
 <body>
-    
+    <input type="number" id="age" min="0" max="110">
+    <button onclick="survey()">입력</button>
+    <div id="result"></div>
 
 
 </body>
