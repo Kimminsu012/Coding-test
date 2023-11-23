@@ -33,7 +33,7 @@ let nt = new Array();
 // }document.write("평균 : " + avg + "<br>");
 
 // for(var i=0; i<names.length; i++){
-//     nt[i] = names[i] + era[i];
+//     nt[i] = names[i] + era[i]; 합칠려면 concat을 사용
 // }document.write(nt + "<br>");
 
 // for(var i=0; i<names.length; i++){
