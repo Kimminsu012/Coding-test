@@ -29,5 +29,6 @@ $(function(){
 });
 
 function endgame(){
+    // 열 +1 , 행 +5 , 대각 +6 규칙
     
 }
