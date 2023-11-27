@@ -56,10 +56,15 @@
             <button onclick="enter()">입력</button>
         </div> -->
         <div id="result_modal">
-            <div class="modal_bg"></div>
+            <div class="modal_bg">결과창</div>
             <div class="result_detail">
-                <h3 class="result"></h3>
+                <h5 class="result_true">5줄 빙고 성공</h5>
+                <h5 class="result_fail">6줄 이상 실패</h5>
+                <button type="button" class="out">닫기</button>
             </div>
+        </div>
+        <div id="reset_wrap">
+            <button type="button" class="reset_button">리셋</button>
         </div>
         <!-- result_modal의 용도
             빙고게임이 끝나면 5줄 빙고로 끝났다 라고 알림을
