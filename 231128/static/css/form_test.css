@@ -1,0 +1,40 @@
+.checkWrap{
+    font-size: 20px;
+    position: relative;
+    left: 0;
+    top: 0;
+}
+
+.allBox{
+    margin-bottom: 20px;
+}
+.listBox{
+    display: flex;
+    margin-left: 30px;
+    width: 150px;
+    column-gap: 5px;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+    row-gap: 20px;
+}
+
+#pass{
+    width: 200px;
+    height: 30px;
+    border-radius: 20px;
+    font-size: 20px;
+}
+
+
+/* 선생님 풀이
+.checkWrap{
+    width: 300px;
+}
+.listBox{
+    padding-left: 50px;
+    display: flex;
+    flex-direction: column;
+}
+#pass{
+    width: 200px;
+} */
