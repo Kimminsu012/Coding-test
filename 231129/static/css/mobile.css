@@ -28,5 +28,6 @@ img{ width: 100%; }
 #header .logo{
     width: 60px; height: 50px;
     background-color: #eee;
-    
 }
+.mobile_menu{ font-size: 2rem; }
+.mobile_search{ font-size: 2em;}
