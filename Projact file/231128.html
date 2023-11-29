@@ -29,6 +29,7 @@
             border-radius: 100%;
             background-color: yellow;
             animation: moon1 11s infinite linear  ;
+            animation-fill-mode: forwards;
         }
         #moon2{
             position: absolute;
@@ -39,7 +40,8 @@
             height: 50px;
             border-radius: 100%;
             background-color: white;
-            animation: moon2 11s infinite linear reverse ; 
+            animation: moon2 11s infinite linear reverse ;
+            animation-fill-mode: forwards;
         }
 
         @keyframes moon1{
@@ -155,6 +157,7 @@
             right: 40px;
             color: white;
             animation: loding 11s infinite linear;
+            animation-fill-mode: forwards;
         }
 
         @keyframes loding{
