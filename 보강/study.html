@@ -6,47 +6,43 @@
     <title>Document</title>
 
     <style>
-        *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        /* flex를 지정할때 시작하는 방향이 있다.
+            기본 방향 : 가로 방향 
+                        세로 방향
+            justify-content: 글씨들의 수평정렬 혹은 이미지의 수평정렬을 위해 사용하는 용도
+            align-items: 글씨들의 수직정렬 혹은 이미지의 수직정렬을 위해 사용하는 용도
+            flex-direction: 방향이 바뀌는 거에 따라 justify 와 align의 방향이 바뀐다.
+        */
+        #wrap1{
+            position: relative;
+            width: 1000px;
         }
-
-        /* #wrap{
-            width: 1200px;
-            height: 1500px;
-            display: flex;
-        }
-        #menu_wrap{
-            width: 30%;
-            height: 100%;
-            background-color: gray;
-            display: flex;
-            justify-content: center;
-        }
-        #menu_list{
-            width: 60%;
-            height: 100%;
-        }
-        #side_logo{
+        #header1{
             width: 100%;
-            height: 100px;
-            border: 1px solid black;
-            border-radius: 20px;
-            margin: 20px 0;
+            position: relative;
+            background-color: green;
+            display: flex;
+            flex-direction: row;
+            justify-content: center; /* 수평 정렬 */
+            align-items: center; /* 수직 정렬 */
+            flex-wrap: wrap; /* 여러개의 아이템들을 행과 열의 공간으로 표현 */
+                            /* 다중행, 다중열 사용시  */
         }
-        #side_menu{
-            width: 100%;
-            height: 1300px;
-            border: 1px solid black;
-            border-radius: 20px;
-            margin-top: 20px;
+        /* .menu{
+            position: absolute;
         }
-        #main_wrap{
-            width: 70%;
-            height: 100%;
-            background-color: darkgray;
+        .menu:nth-child(1){ left: 0; }
+        .menu:nth-child(2){ left: 100px; }
+        .menu:nth-child(3){ left: 200px; }
+        .menu:nth-child(4){ left: 300px; }
+        .menu:nth-child(5){ left: 400px; } */
+        /* .menu{
+            float: left;
+            padding: 0 30px; 
+            margin: 0 30px;
         } */
+
+
 
     </style>
     
@@ -167,4 +163,6 @@
 
 <!--
         html을 할 때 어디에 넣을지 어떤 구상을 할지 간단하게 표현 할려면 파워포인트로 하는게 좋다.
+        모르는 것들이 있을 때 해당하는 단어를 영어사전에 검색하여 그 단어를 가져오면 대부분 가능하다.
+        대부분의 명령어들은 해당 단어를 영어로 해석한 단어 그대로 사용이 되는 부분이 많다.
     -->
