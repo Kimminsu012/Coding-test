@@ -1,0 +1,11 @@
+#wrap{
+    width: 1000px;
+}
+#wrap_box{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.img_box{
+    width: 20%;
+}
