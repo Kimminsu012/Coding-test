@@ -5,11 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-    <scripte>
+    
+    
+    <script>
 
-    </scripte>
+    //     let result = 0;
+    // function sugar1(){
+    //     var bl_in =parseInt($("#blode").val());
+    //     if( bl_in >= 70 && bl_in <=100 ){
+    //         $("#bl_result").html("공복전 혈당이 정상입니다");
+    //     }
+    //     if( bl_in >= 90 && bl_in <=140 ){
+    //         $("#bl_result").html("식후 2시간 혈당이 정상입니다");
+    //     }
+    //     return sugar1;
+    // }
+    // function sugar2(){
+
+    //     if(sugar2 < 5.7 ){
+    //         $("#su_result").html("당화혈색소 입니다")
+    //     }
+        
+    // }
+
+    function bmikg(){
+        var kg_text = $("#kg").val();
+        var tall_text = $("#tall").val();
+        var total = parseInt(kg_text/((tall_text/100)*(tall_text/100)));
+
+        if( total <= 18.5 ){
+            $("#kg_result").html(`현재 BMI 수치는 ${total} 이므로 저체중입니다`)
+        }
+        if( total > 18.5 && total <= 22.9 ){
+            $("#kg_result").html(`현재 BMI 수치는 ${total} 이므로 정상입니다`)
+        }
+        if( total >= 23 && total <= 24.9 ){
+            $("#kg_result").html(`현재 BMI 수치는 ${total} 이므로 과체중입니다`)
+        }
+        if( total >= 25 ){
+            $("#kg_result").html(`현재 BMI 수치는 ${total} 이므로 비만입니다`)
+        }
+    }
+
+
+
+
+    </script>
 </head>
 <body>
+    
+    <input type="text" id="blode">
+    <button onclick="sugar1()">공복 혈당</button>
+    <button onclick="sugar2()">혈당 테스트</button>
+    <div id="bl_result"></div>
+    <div id="su_result"></div>
+    
+    <br><br>
+
+    <input type="text" id="kg"><label for="kg">몸무게</label>
+    <input type="text" id="tall"><label for="tall">키</label>
+    <button onclick="bmikg()" id="bmiK">BMI 측정</button>
+    <div id="kg_result"></div>
 
 </body>
 </html>
@@ -27,7 +83,7 @@
     종우가 비만도 측정을 하였다.
     비만도 BMI지수 계산은 몸무게/((키/100)*(키/100))
     BMI지수가 18.5 이하면 저체중
-    1.6~22.9 사이면 정상
+    18.5~22.9 사이면 정상
     23.0 ~ 24.9 사이면 과체중
     25 이상이면 비만
 
