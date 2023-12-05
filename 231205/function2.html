@@ -4,8 +4,163 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script>
+        // 함수를 작업 할 때 여러가지의 함수를 사용을 해도 이름으로 뭘 했는지 알아보기가 쉽다.
+        $(function(){
+
+            $(".house").on( "dblclick" , update ); // function 자리에 대신하여 다른곳에 함수를 만든 후 실행을 시킨다는 뜻으로 쓸수있다.
+                
+
+
+
+
+        });
+
+        // javascript - innerHTML , jquery - html()
+        // innerHTML="<input>" ,html("<input>")
+        // innerHTML 과 html() 은 덮어쓰기 형태로 추가 한다.(기존의 내용 삭제)
+
+        // a 라는 함수안에  변수값을 b라는 함수에서 사용하려면
+        // b함수의 매개변수를 통해 전달하거나,
+        // 전역변수를 통해 사용가능하게 한다.
+
+        // on( "이벤트명" , 이벤트발생시 실행할 함수 );
+        // 이벤트 발생 시 함수는 익명함수(function(){}) 혹은 함수명 만 작성
+
+        // input type이 날짜 또는 시간 형식일 경우에
+        // value 값은 형태가 2023-12-01 11:09 형식이다.
+        // 즉 input type=date value='2023-12-01' 이 되어야한다.
+
+        // td.removeClass("house"); // removeClass - 삭제 할 클래스명 
+        // td.addClass("change"); // addClass - 추가 할 클래스명
+
+        function update(){
+            // alert( $(this).text() ); // jquery에서만 가능한 방식
+            var td = $(this); // 클릭한 td 태그
+            
+            var bt = "<button class='modify'>수정</button>";
+            var htmlTag = makeHtml(td);
+
+            
+            // 공통적인 부분은 if문 밖으로 빼고 다른 부분은 if문으로 구분을 한다.
+            td.html( htmlTag + bt );
+            
+            $(".modify").on("click", function(){
+                save(td); // 적용할 변수를 넣어서 실행 시키는 방법
+            }); 
+            
+        }
+
+        function makeHtml(td){
+            var td_text = td.text(); // 클릭한 td 태그안의 텍스트
+            var type = "text";
+            if(td.hasClass("payment")){
+                let pay = ["카카오체크카드","국민체크카드","현대카드","체크카드","토스뱅크"];
+                htmlTag = `<select id='pay'>`;
+                for( var card of pay){
+                    htmlTag += `<option value='${card}' ${td_text===card ? 'selected' : ''}>${card}</option>`;
+                }
+                htmlTag += `</select>`;
+                return htmlTag;
+            }else{
+                if(td.hasClass("date")){ // hasClass 클래스 존재여부 확인
+                // 12.1 -> 12     1 -> 2023 + 12 + 1 -> 2023-12-01
+                    type="date";
+                    td_text = changeDate(td_text);
+                }
+                
+                htmlTag = `<input type=${type} value='${td_text}'>`;
+                return htmlTag;
+            }
+        }
+
+        // 내용이 복잡 해지는 경우 분할 하여 코드가 한곳에 집중 되는것을 방지한다.
+        // 코드가 집중되어 작성되면 개발자 입장에서 코드를 파악하기 힘들다.
+        // 코드를 정리하여 작성하는 것 개발자가 가져야할 습관중 하나이다.
+
+
+
+        function changeDate(date){ // date안에 있는 td_text를 전달받는다.
+            //td_text ="2023-" + td_text.split(".")[0] + "-" + td_text.split[1];
+
+            if(date.includes("-")){ // 2023-12-01 , 12.1 둘중에 하나 들어옴
+                return Number( date.split("-")[1] ) + "." + Number( date.split("-")[2] );
+            }else{
+                let month = digits( date.split(".")[0] );
+                let day = digits( date.split(".")[1] );
+
+                return "2023-"+month+"-"+day;
+            }
+            
+            // if(month.length == 1) month= "0" + month; 변수만 다르고 동일한 동작을 할때 함수로 만들어서 줄여줄수있다.
+            // if(day.length == 1) day= "0" + day;
+        }
+
+        // 중복적으로 코드가 사용되는 경우 함수로 구현 한다.
+
+        function digits( num ){
+            if( num.length == 1) 
+                num = "0" + num;
+            return num;
+        }
+
+        function save( t ){ // 수정버튼 클릭이벤트 등록시 td를 t변수로 전달받음
+            // select 태그의 선택한 옵션이 td의 text로 저장될 수 있게 만들기
+            var tag = t.hasClass("payment") ? "select" : "input";
+
+            var text = t.children(tag).val(); // input 태그에 작성된 텍스트
+            
+
+            if(t.hasClass("date")){
+                // text = Number(text.split("-")[1])+"."+Number(text.split("-")[2]);
+                text = changeDate(text);
+            }
+
+            t.text( text );
+            
+        }
+
+
+
+
+    </script>
+
 </head>
 <body>
     
+    <div id="wrap">
+        <table>
+            <thead>
+                <tr>
+                    <td>일</td>
+                    <td>내역</td>
+                    <td>지출</td>
+                    <td>결제방법</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="house date">12.1</td>
+                    <td class="house detail">편의점(음료)</td>
+                    <td class="house expense">2300</td>
+                    <td class="house payment">체크카드</td>
+                </tr>
+                <tr>
+                    <td class="house date">12.2</td>
+                    <td class="house detail">감성커피</td>
+                    <td class="house expense">3500</td>
+                    <td class="house payment">체크카드</td>
+                </tr>
+                <tr>
+                    <td class="house date">12.3</td>
+                    <td class="house detail">쿠켄(돈까스)</td>
+                    <td class="house expense">8000</td>
+                    <td class="house payment">체크카드</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
 </body>
 </html>
