@@ -9,37 +9,61 @@
     
     <script>
 
-    //     let result = 0;
-    // function sugar1(){
+        
+    // function sugar(){
     //     var bl_in =parseInt($("#blode").val());
     //     if( bl_in >= 70 && bl_in <=100 ){
     //         $("#bl_result").html("공복전 혈당이 정상입니다");
-    //     }
+    //     };
     //     if( bl_in >= 90 && bl_in <=140 ){
     //         $("#bl_result").html("식후 2시간 혈당이 정상입니다");
     //     }
-    //     return sugar1;
-    // }
-    // function sugar2(){
-
-    //     if(sugar2 < 5.7 ){
-    //         $("#su_result").html("당화혈색소 입니다")
+    //     var totals = BMI();
+    //     if(totals < 4){
+    //         $("#bl_result").html("당화혈색소 입니다.");
     //     }
         
     // }
+    // function BMI(){
+    //     var bl_in =parseInt($("#blode").val());
+    //     return(bl_in*0.057);
+        
+    // }
+
+        function sugar(){
+            var v = getBlood();
+            var out = "정상혈당";
+            if(70 <= v && v <= 100)
+            out +=" 공복혈당"
+            if(90 <= v && v <= 140)
+            out +=" 식후 2시간 혈당"
+            if( 66.1 > v )
+            out +="당화혈색소"
+            document.getElementById("bl_result").innerHTML=out;
+        }
+        function getBlood(){
+            var v = Number($("#blode").val());
+            return v;
+        }
+
+
+        function n(v){
+            return Number(v);
+        }
+
 
     function bmikg(){
-        var kg_text = $("#kg").val();
-        var tall_text = $("#tall").val();
+        var kg_text = n($("#kg").val());
+        var tall_text = n($("#tall").val());
         var total = parseInt(kg_text/((tall_text/100)*(tall_text/100)));
 
         if( total <= 18.5 ){
             $("#kg_result").html(`현재 BMI 수치는 ${total} 이므로 저체중입니다`)
         }
-        if( total > 18.5 && total <= 22.9 ){
+        if( total > 18.5 && total < 23 ){
             $("#kg_result").html(`현재 BMI 수치는 ${total} 이므로 정상입니다`)
         }
-        if( total >= 23 && total <= 24.9 ){
+        if( total >= 23 && total < 25){
             $("#kg_result").html(`현재 BMI 수치는 ${total} 이므로 과체중입니다`)
         }
         if( total >= 25 ){
@@ -55,10 +79,8 @@
 <body>
     
     <input type="text" id="blode">
-    <button onclick="sugar1()">공복 혈당</button>
-    <button onclick="sugar2()">혈당 테스트</button>
+    <button onclick="sugar()">혈당 테스트</button>
     <div id="bl_result"></div>
-    <div id="su_result"></div>
     
     <br><br>
 
