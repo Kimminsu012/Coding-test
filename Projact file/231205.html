@@ -19,37 +19,26 @@
         setInterval() 사용 하기
 -->
     <script>
-    
-        let image = ["paper.png","rock.png","scissors.png"];
-        let img = 0;
-        let image_box = new Array();
+
+        let img = $(".imgBox");
+        let res = 0;
 
         $(function(){
+            $(".start").on("click",random);
 
-        $("#start_bt").on("click", random);
 
 
-        
 
-        function random(){
-            for( var i=1; i<= parseInt(img/2); i++){
-                var im = new Array();
-                for(var k=1; k <= parseInt(img/2); k++){
-                    var t = Math.floor(Math.random()*parseInt(img/2));
-                    if( im.indexOf(t) == -1)
-                        im.push(t);
-                    else
-                        k--;
-                }
-                image_box.push(im);
-            }
-            setInterval(() => console.log(image_box),300);
+            function random(){
+                
         }
         
+        });
         
 
         
-        });
+
+
 
 
 
@@ -71,14 +60,29 @@
             justify-content: space-between;
             position: relative;
         }
-        .imgBox img{
+        .imgBox img , .imgUser img{
             width: 300px;
-            display: none;
         }
-        
         .imgBox{
             position: absolute;
             top: 50%;
+        }
+        .imgBox:nth-child(1){
+            opacity: 0;
+            animation: ran 3s  infinite linear alternate;
+        }
+        .imgBox:nth-child(2){
+            opacity: 0;
+            animation: ran2 3s  infinite linear alternate;
+        }
+        .imgBox:nth-child(3){
+            opacity: 0;
+            animation: ran3 3s  infinite linear alternate;
+        }
+        .fs{
+            position: absolute;
+            top: 50%;
+            z-index: 1;
         }
         #btWrap{
             position: relative;
@@ -111,6 +115,22 @@
             font-size: 40px;
         }
 
+        @keyframes ran{
+            0%{ opacity: 1; }
+            50%{ opacity: 0; }
+            100%{ opacity: 0; }
+        }
+        @keyframes ran2{
+            0%{ opacity: 0; }
+            50%{ opacity: 1; }
+            100%{ opacity: 0; }
+        }
+        @keyframes ran3{
+            0%{ opacity: 0; }
+            50%{ opacity: 0; }
+            100%{ opacity: 1; }
+        }
+
     </style>
 
 
@@ -128,16 +148,16 @@
         <div id="imgWrap">
             <div class="comWrap">
                 <div class="comBox">
-                    <div class="imgBox"><img src="./static/images/paper.png" alt="보" id="com_paper"></div>
-                    <div class="imgBox"><img src="./static/images/rock.png" alt="주먹" id="com_rock"></div>
-                    <div class="imgBox"><img src="./static/images/scissors.png" alt="가위" id="com_sis"></div>
+                    <div class="imgBox"><img src="./static/images/paper.png" id="cp" ></div>
+                    <div class="imgBox"><img src="./static/images/rock.png" id="cr"></div>
+                    <div class="imgBox"><img src="./static/images/scissors.png" id="cs"></div>
                 </div>
             </div>
             <div class="userWrap">
                 <div id="userBox">
-                    <div class="imgBox"><img src="./static/images/paper.png" alt="보" id="user_rock"></div>
-                    <div class="imgBox"><img src="./static/images/rock.png" alt="주먹" id="user_rock"></div>
-                    <div class="imgBox"><img src="./static/images/scissors.png" alt="가위" id="user_rock"></div>
+                    <div class="imgUser"><img src="./static/images/paper.png" id="up"></div>
+                    <div class="imgUser"><img src="./static/images/rock.png" id="ur"></div>
+                    <div class="imgUser"><img src="./static/images/scissors.png" id="us"></div>
                 </div>
             </div>
         </div>
