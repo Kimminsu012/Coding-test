@@ -7,14 +7,70 @@
 
     <script>
 
-        // 객체 - 의사나 행위가 미치는 대상
-        //        의사 - 무엇을 하고자 하는 생각
-        //       
+        // // 객체 - 의사나 행위가 미치는 대상
+        // //        의사 - 무엇을 하고자 하는 생각
+        // //        행위 - 행동(함수로 표현 method)
+        
+        // // 자바스크립트 객체에 데이터는 key:value 1:1 로 표현된다.
+        // // key는 객체 내부에서 유일한 명칭이여야 한다. (중복사용은 허용이 안되어 이전에 썻던 명칭에 있는 value값은 덮어씌어진다.)
+        // // value는 key의 명칭이 다르면 중복사용이 허용이 된다.
+        // // 아래와 같은 객체는 한번밖에 안 만들어진다.
+
+        // var obj1 = {"이름":"김유신", age:23 , 직업:"군인" , "네임":"김유신"};
+        // //  이름 - key , 김유신 - value
+        
+        // document.write( obj1["이름"] );
+        // document.write( obj1['age'] );
+
+        // // function을 사용한 생성자 함수 라는 것 으로 객체를 생성한다.
+
+        // function apple(){ // 생성자 함수(this.key = "value";)
+        //     this.name = "노재홍";
+        //     this.age = 20;
+        //     this.birth = function(){ document.write( 2023-this.age ); } // 객체 안에 함수를 만든걸 method라고 한다.
+        // }
+        
+        // let you = new Array();
+        // you.push( new apple() );
+        // you.push( new apple() );
+        // you.push( new apple() );
+
+        // you[0].birth();
+
+        // document.write(you[0]["name"] + "  " + you[0].age);
+
+        // // html 태그들의 style과 id,class,이벤트 들을 정하여 태그 생성을 할 수 있다.
+        // // 데이터들을 보다 관리가 용이한 구조로 만들어 사용할 수 있다.
+        
+        // // let you = new apple();
+        // // document.write(you["name"] + " " + you.age) // 표현하는 방법
+
+
+        function myButton( bgcolor , fsize , width , height , bdcolor ){ // 생성자 함수 , 내가 원하는 스타일의 버튼 만들기
+            // key 와 매개변수의 이름은 같아도 된다.
+            this.bgcolor = bgcolor;
+            this.fontsize = fsize;
+            this.width = width;
+            this.height = height;
+            this.borderColor = bdcolor;
+            this.make=function(){
+                document.write( `<button
+                style='background-color:${this.bgcolor}; font-size:${this.fontsize};
+                width:${this.width}; height:${this.height}; border-color:${this.borderColor};
+                '>의사 버튼</button>` );
+            };
+        }
+
+        let mybt = new myButton("aqua","30px","200px","50px","blue"); // 의사 표현
+        mybt.make();
+
+
 
 
 
 
     </script>
+
 
 </head>
 <body>
