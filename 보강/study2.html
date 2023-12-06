@@ -142,8 +142,32 @@
         */
 
         var salary = prompt("월 소득액을 입력 하세요 (단위 : 만원)");
+        var res = 0;
+    
+        if(salary > 50000){
+            res = parseInt(salary/1.42);
+            document.write("내야할 세금 : "+(salary-res)+"원");
+        }else if(salary <= 50000 && salary > 30000){
+            res = parseInt(salary/1.4);
+            document.write("내야할 세금 : "+(salary-res)+"원");
+        }else if(salary <= 30000 && salary > 15000){
+            res = parseInt(salary/1.38);
+            document.write("내야할 세금 : "+(salary-res)+"원");
+        }else if(salary <= 15000 && salary > 8800){
+            res = parseInt(salary/1.35);
+            document.write("내야할 세금 : "+(salary-res)+"원");
+        }else if(salary <= 8800 && salary > 4600){
+            res = parseInt(salary/1.24);
+            document.write("내야할 세금 : "+(salary-res)+"원");
+        }else if(salary <= 4600 && salary > 1200){
+            res = parseInt(salary/1.15);
+            document.write("내야할 세금 : "+(salary-res)+"원");
+        }else{
+            res = parseInt(salary/1.06);
+            document.write("내야할 세금 : "+(salary-res)+"원");
+        }
 
-        document.write(res+"만원")
+        
 
 
 
