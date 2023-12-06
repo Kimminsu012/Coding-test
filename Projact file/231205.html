@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-
+    <link rel="stylesheet" href="./static/css/game.css">
+    <script src="./static/javascript/game.js"></script>
     <!--
     과제
         가위 바위 보 만들기
@@ -20,20 +21,7 @@
 -->
     <script>
 
-        let img = $(".imgBox");
-        let res = 0;
-
-        $(function(){
-            $(".start").on("click",random);
-
-
-
-
-            function random(){
-                
-        }
         
-        });
         
 
         
@@ -47,7 +35,7 @@
 
     <style>
 
-        #wrap{
+        /* #wrap{
             width: 1200px;
             height: 1000px;
             margin: 0 auto;
@@ -69,15 +57,15 @@
         }
         .imgBox:nth-child(1){
             opacity: 0;
-            animation: ran 3s  infinite linear alternate;
+            animation: ran 0.3s  infinite linear alternate;
         }
         .imgBox:nth-child(2){
             opacity: 0;
-            animation: ran2 3s  infinite linear alternate;
+            animation: ran2 0.3s  infinite linear alternate;
         }
         .imgBox:nth-child(3){
             opacity: 0;
-            animation: ran3 3s  infinite linear alternate;
+            animation: ran3 0.3s  infinite linear alternate;
         }
         .fs{
             position: absolute;
@@ -129,7 +117,7 @@
             0%{ opacity: 0; }
             50%{ opacity: 0; }
             100%{ opacity: 1; }
-        }
+        } */
 
     </style>
 
@@ -137,7 +125,27 @@
 </head>
 <body>
     
-    <div id="wrap">
+    <div id="screen">
+        <div id="comView">
+            <div class="com">
+                <img id="comImg">
+            </div>
+        </div>
+        <div id="userView">
+            <div class="user scissors"><img src="./static/images/scissors.png" alt="가위"></div>
+            <div class="user rock"><img src="./static/images/rock.png" alt="바위"></div>
+            <div class="user paper"><img src="./static/images/paper.png" alt="보"></div>
+        </div>
+        <div id="result">
+            <div class="bt"><button id="start">시작</button></div>
+            <div class="res"></div>
+        </div>
+    </div>
+
+
+
+
+    <!-- <div id="wrap">
         <div id="btWrap">
             <div class="start"><button type="button" id="start_bt">시작</button></div>
             <div class="stop"><button type="button" id="stop_bt">멈춤</button></div>
@@ -155,13 +163,13 @@
             </div>
             <div class="userWrap">
                 <div id="userBox">
-                    <div class="imgUser"><img src="./static/images/paper.png" id="up"></div>
-                    <div class="imgUser"><img src="./static/images/rock.png" id="ur"></div>
-                    <div class="imgUser"><img src="./static/images/scissors.png" id="us"></div>
+                    <div class="imgUser"><button><img src="./static/images/paper.png" id="up"></button></div>
+                    <div class="imgUser"><button><img src="./static/images/rock.png" id="ur"></button></div>
+                    <div class="imgUser"><button><img src="./static/images/scissors.png" id="us"></button></div>
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
 
 </body>
