@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        // 자바스크립트 window 객체
+        // dom - document object model -> html 구조 , 표준 문서에 규격화 되어있다.
+        // bom - browser object model -> browser의 구성하는 구조 , 표준이 없다.
+        // bom의 객체 - window , screen , location , history , navigator , cookie (모든 브라우저의 공통적인 객체)
+        // css -> web-kit
+
+        // window 객체
+        // - 현재 브라우저의 창 을 나타낸다.
+        // window.document.write();
+        // window.alert(); , window.prompt();
+        // window.document.getElementById();
+        // if( 10 > 5 ){ 
+        //    alert("aa");
+        // }
+        // window.open();  window.close();  window.moveTo();  window.resizeTo(); 
+
+        let child_hd = 0; // 새창 핸들값 저장 변수
+        function child(){
+            child_hd = window.open("" , "" , "width=300,height=500");
+            child_hd.resizeTo(500,700); // 크기 변경
+        }
+        function sizeup(){
+            child_hd.resizeBy(0,10); // 크기 증가
+        }
+        function move(){
+            child_hd.moveTo(100,300);
+        }
+        function nowscrollY(){
+            alert( window.scrollY);
+            
+        }
+
+        window.addEventListener("scroll",function(){
+            if(window.scrollY >= 200 && window.scrollY <= 400){
+                document.getElementById("a").innerHTML=
+                    "<div style='position:relative; top:300px; height:50px; background-color:red;'></div>";
+            }else{
+                document.getElementById("a").innerHTML="";
+            }
+        });
+
+
+        // scrollTo(), scrollBy(), scrollX , scrollY
+
+    </script>
+
+
+
+</head>
+<body>
+    <div id="a" style="height: 2000px; background-color: aqua;"></div>
+    <button onclick="nowscrollY()" style="position: fixed; top: 50px; left: 50px;">스크롤Y축</button>
+    <button onclick="nowscrollX()" style="position: fixed; top: 50px; left: 200px;">스크롤X축</button>
+    <button onclick="child()">새창</button>
+    <button onclick="sizeup()">크기증가</button>
+    <button onclick="move()">이동</button>
+</body>
+</html>
