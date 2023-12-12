@@ -1,33 +1,33 @@
 
 
-const zone_name=[
-    "복지기금","화성","성남","창원","제주","용인","수원","울산",
-    "인천공항","청주","광주","부천","대구","남양주","인천","포항",
-    "복지기금납부","천안","부산","전주","서울","안산","대전",
-    "무인도","안양","김해","평택","시흥","파주","의정부","김포","출발"
-];
-const zone_color=["#FF2424","#53C14B","#FFBB00","#121212"]; // 각 면의 색상
-const zone_money=[ // 각 도시의 매입 가격 (만단위)
-    0, 25, 27, 26, 34, 28, 27, 39,
-    0, 16, 42, 20, 45, 19, 48, 27,
-    0, 21, 52, 20, 80, 22, 120,
-    0, 12, 10, 15, 12, 9, 9, 7, 0
-];
+// const zone_name=[
+//     "복지기금","화성","성남","창원","제주","용인","수원","울산",
+//     "인천공항","청주","광주","부천","대구","남양주","인천","포항",
+//     "복지기금납부","천안","부산","전주","서울","안산","대전",
+//     "무인도","안양","김해","평택","시흥","파주","의정부","김포","출발"
+// ];
+// const zone_color=["#FF2424","#53C14B","#FFBB00","#121212"]; // 각 면의 색상
+// const land_purchase=[ // 각 도시의 매입 가격 (만단위)
+//     0, 25, 27, 26, 34, 28, 27, 39,
+//     0, 16, 42, 20, 45, 19, 48, 27,
+//     0, 21, 52, 20, 80, 22, 120,
+//     0, 12, 10, 15, 12, 9, 9, 7, 0
+// ];
 
-const bg_image=[ // 모서리구역의 배경 이미지
-    "start.jpg","island.jpg","Social.png","fly.jpg"
-];
+// const bg_image=[ // 모서리구역의 배경 이미지
+//     "start.jpg","island.jpg","Social.png","fly.jpg"
+// ];
 
-// 각 구역의 객체 생성자 함수
-// 구역 이름, 토지매입가격, 소유자, 색상, 기능(모서리부분), 이미지
-function zone_Object( name, purchase, owner, color, func, image ){
-    this.name=name;
-    this.purchase=purchase;
-    this.owner=owner;
-    this.color=color;
-    this.func=func;
-    this.back=image;
-}
+// // 각 구역의 객체 생성자 함수
+// // 구역 이름, 토지매입가격, 소유자, 색상, 기능(모서리부분), 이미지
+// function zone_Object( name, purchase, owner, color, func, image ){
+//     this.name=name;
+//     this.purchase=purchase;
+//     this.owner=owner;
+//     this.color=color;
+//     this.func=func;
+//     this.back=image;
+// }
 
 //플레이어 생성자 함수
 function player(num,color){
@@ -69,24 +69,58 @@ let player_list = new Array(); // 게임 참가자
 
 
 //         zone.push( new zone_Object(
-//             zone_name[i] , zone_money[i] , "", color, "", image
+//             zone_name[i] , land_purchase[i] , "", color, "", image
 //         ));
 //     }
 //     console.log(zone);
 // }
 
+// function zone_Object( name, purchase, owner, color, func, image ){
+//         this.name=name;
+//         this.purchase=purchase;
+//         this.owner=owner;
+//         this.color=color;
+//         this.func=func;
+//         this.back=image;
+//     }
+
+let zone_name = new Array();
+let zone_color = new Array();
+let land_purchase = new Array();
+let back = new Array();
+let func = new Array();
+let owner = new Array();
+
+var xml = new XMLHttpRequest();
+xml.onload = function(){
+    var data = JSON.parse(this.responseText);
+    
+    for( var i of data ){
+        zone_name.push(i.name);
+        zone_color.push(i.color);
+        land_purchase.push(i.purchase);
+        back.push(i.back);
+        owner.push(i.owner);
+        func.push(i.func);
+    }
+
+}
+xml.open("GET" , "./data/city.json");
+xml.send();
+
 // 구역객체들을 zone 클래스 div에 적용하기
 function zone_draw(){
-    $.each( zone, function( idx, obj ){
-        if(idx == 0 || idx == 8 || idx == 23 || idx == 31){
-            $(".zone").eq(idx).css("background-image","url(./static/images/"+obj.back+")");
-            $(".zone").eq(idx).css("background-size","cover");
+
+    for(var i=0; i<zone_name.length; i++){
+
+        if(i == 0 || i == 8 || i == 23 || i == 31){
+            $(".zone").eq(i).css("background-image","url(./static/images/"+back[i]+")");
+            $(".zone").eq(i).css("background-size","cover");
         }else{
-            $(".zone").eq(idx).children(".zone_name").text(obj.name);
-            $(".zone").eq(idx).children(".zone_color").css("background-color",obj.color);
+            $(".zone").eq(i).children(".zone_name").text(zone_name[i]);
+            $(".zone").eq(i).children(".zone_color").css("background-color",zone_color[i]);
         }
-        
-    });
+    }
 }
 function game_init(){
     var pc = Number($("#player_number").val());
@@ -116,7 +150,7 @@ function change_pcl(){
 }
 
 $(function(){
-    zone_create();
+    // zone_create();
     zone_draw();
 
     $("#enroll").on("click", game_init);
