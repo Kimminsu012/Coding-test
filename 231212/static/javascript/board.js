@@ -46,7 +46,8 @@ let zone = new Array(); // 각 구역의 객체 저장 배열
 let player_list = new Array(); // 게임 참가자
 
 // 함수정의
-// 현재 함수가 없는 상황에서 칸마다 이름 색깔 객체 json으로 만들기
+// 과제 : 현재 함수가 없는 상황에서 칸마다 이름 색깔 객체 json으로 만들기
+//        각 구역의 객체를 json으로 작성 해오기.
 // function zone_create(){
 //     for( var i=0; i< zone_name.length; i++ ){
 //         var color = zone_color[0]; 
