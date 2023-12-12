@@ -50,7 +50,7 @@ let player_list = new Array(); // 게임 참가자
 //        각 구역의 객체를 json으로 작성 해오기.
 // 해당 하는 객체를 지운 후 실행을 할 때 draw 함수가 실행이 되게 해야 한다.
 // zone_Object 생성자 함수로 생성한 객체들을 json파일로 작성
-// 없는 값은 "" 빈값으로 하기
+// 없는 값은 "" 빈값으로 하기 , 금액이 없으면 0
 // function zone_create(){
 //     for( var i=0; i< zone_name.length; i++ ){
 //         var color = zone_color[0]; 
