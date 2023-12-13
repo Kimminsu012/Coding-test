@@ -192,7 +192,7 @@ function welfare(gamer){ // 위치에 도착한 플레이어가 복지기금 전
     fund=0;
     $("#pm"+gamer.num).text( gamer.money+"만원" );
 }
-function airport(gamer){ // 플레이어가 원하는곳으로 이동 (마우스 클릭)
+function airport(gamer){ // 플레이어가 원하는곳으로 이동 (마우스 클릭) / 과제
 
 }
 function fundpayment(gamer){ // 플레이어의 돈을 복지기금으로 지불(20만원)
@@ -201,7 +201,7 @@ function fundpayment(gamer){ // 플레이어의 돈을 복지기금으로 지불
     fund += 20;
     $("#pm"+gamer.num).text( gamer.money+"만원" );
 }
-function island(gamer){ // 3턴동안 탈출 불가
+function island(gamer){ // 3턴동안 탈출 불가 / 과제
     
 }
 function complete(gamer){ // 출발지를 도착하거나 통과하면 20만원 보너스
