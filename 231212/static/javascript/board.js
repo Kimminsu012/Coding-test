@@ -186,6 +186,9 @@ function func_link(){
     zone[31].func=complete;
 }
 
+// this.drift_turn=0; // 무인도 남은 턴
+// let island_ = new Array(); // 무인도에 도착한 플레이어
+
 function welfare(gamer){ // 위치에 도착한 플레이어가 복지기금 전액 가져가기
     alert(`복지기금${fund}만원 받음`);
     gamer.money += fund; // fund변수는 복지기금 저장해두는 곳
@@ -202,8 +205,18 @@ function fundpayment(gamer){ // 플레이어의 돈을 복지기금으로 지불
     $("#pm"+gamer.num).text( gamer.money+"만원" );
 }
 function island(gamer){ // 3턴동안 탈출 불가 / 과제
-    
+    var drift = player.drift_turn;
+    island_ = (player_list[turn-1]);
+    if(drift == 3){
+        drift = 0;
+        next_turn(gamer);
+    }else{
+        drift++;
+        next_turn(gamer);
+    }
+    console.log(island_);
 }
+
 function complete(gamer){ // 출발지를 도착하거나 통과하면 20만원 보너스
     alert(`시작지점 도착 20만원 지원`);
     gamer.money += 20;

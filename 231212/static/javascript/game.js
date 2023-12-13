@@ -35,11 +35,9 @@ function stop(obj){ // 주사위를 멈추는 함수
     meeple_move();
 }
 
-function meeple_move(){ // 주사위 값에 따라 말을 움직임
-    var gamer = player_list[turn-1];
+function move_gamer(){
     var dice_sum = dice1[1] + dice2[1] + 2;
-    var old_location = gamer.location; // 현재 위치(이동전)
-
+    var gamer = player_list[turn-1];
     // 플레이어 위치 변경
     if( gamer.location+dice_sum > 31 ){ // 주사위 값이 이동할 위치가 대전 위치를 넘는다면
         var diff = (gamer.location+dice_sum) - 31;
@@ -47,11 +45,11 @@ function meeple_move(){ // 주사위 값에 따라 말을 움직임
     }else{
         gamer.location = gamer.location + dice_sum;
     }
+}
 
-    // 말 위치 변경 , 이전 위치에서는 제거
-    var old_zone = find_location(old_location);
-    $(".zone").eq(old_zone).children(".m"+turn).remove();
 
+function move_location(){
+    var gamer = player_list[turn-1];
     // 말 위치 변경
     var zone_location = find_location( gamer.location );
     var tag = `
@@ -61,16 +59,36 @@ function meeple_move(){ // 주사위 값에 따라 말을 움직임
             </div>
         `;
         $(".zone").eq(zone_location).append(tag);
+}
+
+function next_turn(){
+    // 다음 플레이어 턴 넘기기
+    if( turn == player_list.length )
+    turn = 1;
+else
+    turn++;
+}
+
+function meeple_move(){ // 주사위 값에 따라 말을 움직임
+    var gamer = player_list[turn-1];
+    var old_location = gamer.location; // 현재 위치(이동전)
+
+    move_gamer();
+
+    // 말 위치 변경 , 이전 위치에서는 제거
+    var old_zone = find_location(old_location);
+    $(".zone").eq(old_zone).children(".m"+turn).remove();
+    move_location( gamer.location );
+
+    // 말 위치 변경
+    var zone_location = find_location( gamer.location );
+    
         overlap(zone_location); // 다른말과 겹치지 않게
 
         // 이동한 위치에 땅에서 할 일
         gamer_todo(zone_location);
 
-        // 다음 플레이어 턴 넘기기
-        if( turn == player_list.length )
-            turn = 1;
-        else
-            turn++;
+        next_turn();
 
 }
 
