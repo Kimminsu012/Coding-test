@@ -4,9 +4,10 @@ function player(num,color){
     this.num=num;
     this.color=color;
     this.money=100; // 초기 게임머니 100만원
-    this.zone=new Array(); // 매입 한 토지를 배열로 저장
+    this.zone=0; // 매입 한 토지 수량 저장
     this.drift_turn=0; // 무인도 남은 턴
     this.location=0; // 현재위치
+    this.파산=false; // 자금부족으로 파산 한 경우 true
 }
 
 // 전역변수
@@ -14,6 +15,10 @@ let fund = 0; // 사회복지기금 모금 금액 저장 변수
 let island_ = new Array(); // 무인도에 도착한 플레이어
 let zone = new Array(); // 각 구역의 객체 저장 배열
 let player_list = new Array(); // 게임 참가자
+let 탑승객 = 0; // 인천공항에 도착한 플레이어
+
+
+// 함수정의
 
 // 구역객체들을  zone 클래스 div에 적용하기
 function zone_draw(){
@@ -45,7 +50,7 @@ function game_init(){
                 <input type='color' id='pcl${i}' value='${player_list[i-1].color}'>
                 <div class='steate'>
                     자금 : <b id='pm${i}'>${player_list[i-1].money}만원</b>
-                    보유도시 : <b id='pcisty${i}'>${player_list[i-1].zone}개</b>
+                    보유도시 : <b id='pcity${i}'>${player_list[i-1].zone}개</b>
                 </div>
             </div>`
         );
@@ -114,7 +119,7 @@ function overlap(location){ // 말이 생성되거나 이동했을때 위치에 
 }
 
 
-function find_location( n ){ // 플레이어 말이 표시될 위치 또는 이동할 위치 찾기
+function find_location( n ){ // 몇번째 zone 클래스인지? / 플레이어 말이 표시될 위치 또는 이동할 위치 찾기
     var index = 0;
     $(".zone").each( function( idx , item ){
         var num = Number( $(item).data("num") ); // zone 클래스 태그의 data-num값
@@ -174,7 +179,7 @@ $(function(){
     });
     $("#player_number + label").text(2+"명");
 
-    
+    $(".zone").on("click", airport_move);
         // zone_create();
 });
 // 0-복지기금 , 8-공항 , 16-기금납부 , 23-무인도 , 31-출발지
@@ -196,7 +201,8 @@ function welfare(gamer){ // 위치에 도착한 플레이어가 복지기금 전
     $("#pm"+gamer.num).text( gamer.money+"만원" );
 }
 function airport(gamer){ // 플레이어가 원하는곳으로 이동 (마우스 클릭) / 과제
-
+    alert("가고싶은 위치를 선택하세요.");
+    탑승객 = gamer.num; // 인천공항에 도착한 플레이어 번호 저장 , 탑승객 변수에 있는 번호만 이용가능
 }
 function fundpayment(gamer){ // 플레이어의 돈을 복지기금으로 지불(20만원)
     alert(`복지기금 20만원 기부`);
@@ -205,23 +211,15 @@ function fundpayment(gamer){ // 플레이어의 돈을 복지기금으로 지불
     $("#pm"+gamer.num).text( gamer.money+"만원" );
 }
 function island(gamer){ // 3턴동안 탈출 불가 / 과제
-    var drift = player.drift_turn;
-    island_ = (player_list[turn-1]);
-    if(drift == 3){
-        drift = 0;
-        next_turn(gamer);
-    }else{
-        drift++;
-        next_turn(gamer);
-    }
-    console.log(island_);
+    gamer.drift_turn = 3;
+    island_.push(gamer.num);
 }
 
 function complete(gamer){ // 출발지를 도착하거나 통과하면 20만원 보너스
-    alert(`시작지점 도착 20만원 지원`);
     gamer.money += 20;
     $("#pm"+gamer.num).text( gamer.money+"만원" );
 }
+
 
 
 

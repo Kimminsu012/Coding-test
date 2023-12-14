@@ -35,90 +35,178 @@ function stop(obj){ // 주사위를 멈추는 함수
     meeple_move();
 }
 
-function move_gamer(){
-    var dice_sum = dice1[1] + dice2[1] + 2;
+
+
+
+
+function meeple_move(){ // 주사위 값에 따라 말을 움직이기
     var gamer = player_list[turn-1];
+    var dice_sum = dice1[1] + dice2[1]+2;
+    var old_location = gamer.location; // 현재 위치(이동전);
+
     // 플레이어 위치 변경
-    if( gamer.location+dice_sum > 31 ){ // 주사위 값이 이동할 위치가 대전 위치를 넘는다면
+    if( gamer.location+dice_sum > 31 ){ //주사위값이 이동할 위치가 대전위치를넘는다면
         var diff = (gamer.location+dice_sum) - 31;
-        gamer.location = diff - 1;
+        gamer.location = diff-1;
     }else{
         gamer.location = gamer.location + dice_sum;
     }
+
+    말위치변경(gamer , old_location);
+
+    // 이동한 위치에 땅에서 할일
+    gamer_todo(find_location(gamer.location) , gamer);
+
+    // 다음 플레이어 턴 넘기기
+    turn = 다음턴(turn);
+    
+    // 최종 승자
+    var win = 0 , c = 0;
+    for(var i=0; i<player_list.length; i++){
+        if( !player_list[i].파산){
+            c++;
+            win=player_list[i];
+        }
+    }
+
+    if( c == 1 ){
+        alert(`승자는 ${win.name}플레이어, 총 자금 : ${win.money}, 보유도시:${win.zone}`);
+    }
+
+
+
+
+    $(".pcity").css("background","");
+    $("#pcity"+turn).css("background","white");;
+}
+
+function 다음턴( who ){
+    if(who==player_list.length)
+        who=0;
+
+    if( island_.includes( who+1 ) ){
+        player_list[who].drift_turn--;
+        if( player_list[who].drift_turn == 0 ){ // 무인도 남은턴이 0 이면 island배열에서 제거
+            island_.splice( island_.indexOf(who+1),1 );
+        }
+        return 다음턴(who+1);
+    }
+
+    if( player_list[ who ].파산 )
+        return 다음턴(who+1);
+
+    return who+1;
+
 }
 
 
-function move_location(){
-    var gamer = player_list[turn-1];
-    // 말 위치 변경
-    var zone_location = find_location( gamer.location );
-    var tag = `
-            <div class='meeple m${gamer.num}' data-pn='${gamer.num}' 
-            style='color:${gamer.color};'>
+function 말위치변경(gamer,old_location){
+    // 말 위치 변경 , 이전 위치에서는 제거
+    var old_zone = find_location(old_location); // 이동전 말위치 찾기
+    $(".zone").eq(old_zone).children(".m"+gamer.num).remove();
+
+    var zone_location = find_location( gamer.location );//이동할 말위치 찾기
+    var tag=`
+            <div class='meeple m${gamer.num}' data-pn='${gamer.num}'
+            style='color:${gamer.color};  '>
                 <i class="fa-solid fa-otter"></i>
             </div>
         `;
-        $(".zone").eq(zone_location).append(tag);
+    $(".zone").eq(zone_location).append(tag);
+    overlap(zone_location); // 다른말과 겹치지 않게
 }
 
-function next_turn(){
-    // 다음 플레이어 턴 넘기기
-    if( turn == player_list.length )
-    turn = 1;
-else
-    turn++;
-}
-
-function meeple_move(){ // 주사위 값에 따라 말을 움직임
-    var gamer = player_list[turn-1];
-    var old_location = gamer.location; // 현재 위치(이동전)
-
-    move_gamer();
-
-    // 말 위치 변경 , 이전 위치에서는 제거
-    var old_zone = find_location(old_location);
-    $(".zone").eq(old_zone).children(".m"+turn).remove();
-    move_location( gamer.location );
-
-    // 말 위치 변경
-    var zone_location = find_location( gamer.location );
-    
-        overlap(zone_location); // 다른말과 겹치지 않게
-
-        // 이동한 위치에 땅에서 할 일
-        gamer_todo(zone_location);
-
-        next_turn();
-
-}
-
-function gamer_todo( location ){ 
+function gamer_todo( location , gamer ){ 
     // location 매개변수는 zone클래스들 중 에서 몇 번째 zone클래스인지 인덱스값 있음
     // location의 값은 몇 번째 zone클래스 인지 알 수도 있지만 zone 배열의 구역객체의 인덱스로도 사용가능
     var city = zone[location];
-    var gamer = player_list[turn-1];
+
 
     if(city.purchase == 0){ // 매입금이 0인곳은 무인도,기금,출발,공항
         // 16-복지기금 , 24-공항 , 28-기금납부 , 8-무인도 , 0-출발지
-        city.func(gamer);
+        if( city.num != 0 ) // 출발지 도착에 대해서는 meeple_move에서 구현했다.
+            city.func(gamer);
 
     }else if( city.owner == '' ){
         if( confirm(`${city.name}의 매입가는 ${city.purchase}만원 입니다. \n매입 하시겠습니까?`) ){
-            city.owner = turn; // 토지소유자 변경
+            if( gamer.money < city.purchase){ // 토지매입가 보다 플레이어자금이 적으면
+                alert("자금 부족");
+                return;
+            }
+            city.owner = gamer.num; // 토지소유자 변경
             gamer.money -= city.purchase; // 토지금액만큼 차감
-            $("#pm"+turn).text(gamer.money+"만원"); // 변경된 플레이어 금액 표시
+            $("#pm"+gamer.num).text(gamer.money+"만원"); // 변경된 플레이어 금액 표시
             $(".zone").eq(location).children(".zone_name").css("background-color", gamer.color); // 플레이어색으로 변경
+            gamer.zone++;
+            $("#pcity"+gamer.num).text(gamer.zone+"개");
             // $("#pm"+turn).text(player_list[turn-1].)
         }
     }else{ // 도시의 주인이 있는 경우
         // 도시의 주인에게 토지 매입금만큼 통행료 지불
         var owner = city.owner; // 도시 주인 번호
         var tollfee = city.purchase; // 통행료
-        gamer.money -= tollfee;
-        player_list[owner-1].money += tollfee;
+
+        if( gamer.money < tollfee ){ // 플레이어자금이 통행료보다 작다면
+            player_list[owner-1].money += gamer.money;
+            gamer.money = 0;
+            gamer.파산 = true; // 자금이 부족하여 파산
+            파산처리(gamer); // 파산된 플레이어의 토지를 전부 매각과 토지색상제거, 말 제거
+
+        }else{
+            gamer.money -= tollfee;
+            player_list[owner-1].money += tollfee;
+        }
+
         $("#pm"+owner).text(player_list[owner-1].money+"만원");
-        $("#pm"+turn).text(gamer.money+"만원");
+        $("#pm"+gamer.num).text(gamer.money+"만원");
         alert(`${city.name}소유주에게 ${tollfee}만원 지불`);
     }
 
+}
+
+function 파산처리(gamer){ // 자금부족으로 파산된 플레이어 처리
+    // 소유한 토지 전부 owner 초기화 , 소유한 토지 배경색 제거
+    $.each(zone , function(idx,city){
+        if( city.owner == gamer.num ){
+            city.owner = ""; // 소유주 초기화
+            var zl = find_location( city.num );
+            $(".zone").eq(zl).children(".zone_name").css("background-color",""); // 배경색 제거
+        }
+    });
+    // 말 제거
+    var zl = find_location( gamer.location );
+    $(".zone").eq(zl).children(".m"+gamer.num).remove();
+}
+
+
+function airport_move(){
+    if( $(this).hasClass("center") ) return; // 보드의 가운데 클릭시 아무것도 안함
+
+    if( 탑승객 != 0 ){ // 탑승객 변수에 0이 있다면 현재 이용할 수 있는 플레이어가 없다.
+
+        // meeple_move에서 turn이 변경되기때문에 공항에 도착한 플레이어가
+        // 위치를 선택하고 turn이 변경되어야 한다.
+        // 공항에 도착한 플레어를 표현하기위해 turn에 -1을 해준다.
+
+
+
+        var 클릭한도시 = $(this);
+        var 클릭한도시번호 = $(this).data("num");
+        if( 클릭한도시번호 == 24 ){ // 24는 공항 num 이다.
+            return; // 공항을 클릭하면 아무 작업도 하지않는다.
+        }
+        var gamer = player_list[탑승객-1];
+        var old_location = gamer.location;
+        gamer.location = 클릭한도시번호;
+
+        // 출발지를 클랙했냐? 출발지를 통과했냐?
+        if( 클릭한도시번호>=0 && 클릭한도시번호<24 )
+            zone[31].func(gamer);
+
+        말위치변경(gamer,old_location);
+
+        var zone_location = find_location( 클릭한도시번호 );
+        gamer_todo(zone_location , gamer); // 클릭한 위치에서 할일 실행(매입,기금,무인도,출발지등);
+        탑승객 = 0;
+    }
 }
