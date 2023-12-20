@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        // for(var i=1; i<=9; i++)
+        //     document.write( 7+"*"+i+"="+(7*i)+"<br>");
+        
+
+        // for(var i=1; i<=9; i++)
+        //     for(var k=1; k<=9; k++)
+        //         document.write(i+"*"+k+"="+(i*k)+"<br>");
+
+        // sum = sum1_100();
+        // br(sum); // 1부터 100까지 총합
+            
+        // for(var i=1000; i>=80; i--){
+        //     sum -= i;
+        // }
+        // br(sum); // 100부터 80까지의 합 빼기
+        
+        // sum = sum1_100();
+        // br( (sum**2) );
+
+        // function br( aa ){
+        //     document.write(aa+"<br>");
+        // }
+
+        // function sum1_100(){
+        //     var sum = 0;
+        //     for(var i=1; i<=1000; i++)
+        //         sum += i;
+        //     return sum;
+        // }
+        
+        
+        // 자바에서 메서드 만들기
+        // public void name(){
+
+        // }
+
+        // 함수 정의 만들기
+        // 1. 함수 이름 정하기 - 함수의 목적에 맞는 이름 ( 함수를 통해 위치를 찾는다 - find )
+        // 2. 매개변수 유무 - 고정적이지 않고 변동이 되는 부분 혹은 다른 함수 , 변수가 가지고 있는 값을 필요로 하면 매개변수가 필요
+        // 3. 내용은 함수를 정의 하겠다 할때부터 정해져 있어야 한다.
+        // 4. 반환 유무 (return)
+    
+        // 스크립트에서 함수 만들기
+        // function name(){
+
+        // }
+
+        score();
+
+        function score(){
+        var kor = 88;
+        var eng = 99;
+        var mat = 84;
+        var his = 93;
+        subject(kor,eng,mat,his);
+        
+        var total = tot(kor,eng,mat,his);
+
+        avg(total);
+
+        }
+        
+        function subject(kor,eng,mat,his){
+            document.write("국어 : " + kor + "점<br>");
+            document.write("영어 : " + eng + "점<br>");
+            document.write("수학 : " + mat + "점<br>");
+            document.write("역사 : " + his + "점<br>");
+        }
+
+        function tot(kor,eng,mat,his){
+        var total = kor+eng+mat+his;
+        document.write("총점 : " + total + "<br>");
+        return total;
+        }
+
+        function avg(total){
+        var avg = total/4;
+        document.write("평균 : " + avg + "<br>");
+        }
+
+
+
+
+    </script>
+
+</head>
+<body>
+
+
+
+</body>
+</html>
