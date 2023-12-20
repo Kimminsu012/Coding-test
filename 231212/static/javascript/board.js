@@ -1,3 +1,37 @@
+/*
+    function zone_draw(); 부루마블 게임판에 도시명 , 이미지 , 색상을 출력 - 게임 시작전
+
+    function game_init(); 플레이어 인원 설정 후 설정버튼 클릭시 실행 - 게임시작
+
+    function create_dice(); 주사위를 보드위에 출력 - 게임시작
+
+    function overlap(location); 플레이어 말이 겹치지 않게 - 게임진행
+        매개변수 - location : 현재턴인 플레이어말의 위치(div.zone)
+
+    function find_location( n ); 플레이어 말이 표시될 위치(div.zone) 찾기 - 게임진행
+        매개변수 - n : 플레이어말의 위치
+
+    function change_pcl(); 플레이어 색상 변경 - 게임시작 , 게임진행
+
+    function func_link(); 특수구역에 따라 동작할 함수연결 - 게임시작전 
+
+    function welfare(gamer); 특수구역(기금 가져가기) - 게임진행
+        매개변수 - gamer : 특수구역에 도착한 플레이어(player객체)
+
+    function airport(gamer); 특수구역(인천공항) - 게임진행
+        매개변수 - gamer : 특수구역에 도착한 플레이어(player객체)
+
+    function fundpayment(gamer); 특수구역(기금납부) - 게임진행
+        매개변수 - gamer : 특수구역에 도착한 플레이어(player객체)
+
+    function island(gamer); 특수구역(무인도) - 게임진행
+        매개변수 - gamer : 특수구역에 도착한 플레이어(player객체)
+
+    function complete(gamer); 특수구역(시작점) - 게임진행
+        매개변수 - gamer : 특수구역에 도착한 플레이어(player객체)
+
+*/
+
 
 //플레이어 생성자 함수
 function player(num,color){
@@ -22,7 +56,7 @@ let 탑승객 = 0; // 인천공항에 도착한 플레이어
 
 // 구역객체들을  zone 클래스 div에 적용하기
 function zone_draw(){
-    $.each( zone, function( idx, obj){
+    $.each( zone, function( idx , obj ){
         if(idx == 0 || idx==8 || idx==23 || idx==31){
             $(".zone").eq(idx).css("background-image","url(./static/images/"+obj.back+")");
             $(".zone").eq(idx).css("background-size","cover");

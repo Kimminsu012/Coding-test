@@ -1,3 +1,34 @@
+/*
+
+    게임 진행 순서 (다른 일이 없다면 일어나는 순서)
+    rolling -> stop -> meeple_movge -> 말위치변경 -> game_todo -> 다음턴 -> rolling -> stop ...
+
+    function rolling(obj); 주사위 굴리기 위한 함수 - 게임진행
+        매개변수 - obj : 주사위 굴리기 버튼태그
+    
+    function stop(obj); 주사위 멈추기 위한 함수 - 게임진행
+        매개변수 - obj : 주사위 멈춰 버튼태그
+
+    function meeple_move(); 플레이어 말을 주사위 값에 따라 이동시키는 함수 - 게임진행
+
+    function 다음턴( who ); 다음차례가 누구인지 정해주는 함수 - 게임진행
+        매개변수 - who : 현재턴 플레이어 번호
+
+    function 말위치변경(gamer,old_location); 말이 이동할 경우 이전위치와 현재위치 - 게임진행
+        매개변수 - gamer : 현재 플레이어 객체
+        매개변수 - old_location : 현재플레이어의 주사위값에 따라 이동하기전의 위치(num)
+
+    function gamer_todo( location , gamer ); 각 구역에 도착시 해야할 일 - 게임진행
+        매개변수 - location : 말이 도착한 위치(div.zone)
+        매개변수 - gamer : 현재턴 플레이어 객체
+    
+    function 파산처리(gamer); 돈이 0이 되면 파산처리 함수 - 게임진행
+        매개변수 - gamer : 현재턴 플레이어 객체
+
+    function airport_move(); 인천공항에 도착한 플레이어가 선택한 위치로 이동하는 함수 - 게임진행
+*/
+
+
 // 전역변수
 const dice_img = ["dice1.png","dice2.png","dice3.png","dice4.png","dice5.png","dice6.png"]; // 주사위 이미지 배열
 let turn = 1; // 현재 플에이어의 순서
