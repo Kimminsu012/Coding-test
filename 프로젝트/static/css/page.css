@@ -1,0 +1,123 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+    
+}
+
+.navbar_main {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    color: #000;
+    z-index: 999;
+    animation: navbarBottom 1s forwards;
+}
+
+.navbar_text{
+    font-size: 32px;
+}
+
+.navbar_links {
+    margin-right: 5%;
+}
+
+.navbar_links a {
+    text-decoration: none;
+    margin-right: 40px;
+    font-size: 16px;
+    font-weight: 700;
+    position: relative;
+    padding: 5px;
+}
+
+.navbar_links a:last-child {
+    margin-right: 0;
+}
+
+.navbar_links a::before {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background-color: #ecf000;
+    transition: width 0.2s ease-in-out, left 0.2s ease-in-out;
+}
+
+.navbar_links a:hover::before {
+    width: 100%;
+    left: 0;
+}
+
+.navbar_logo {
+    margin-left: 5%;
+}
+
+#wrap{
+    width: 100%;
+    height: 1200px;
+    position: relative;
+    margin: 0 auto;
+    background: url(../../static/images/선반2.png) no-repeat center center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    row-gap: 30px;
+}
+
+#main_box{
+    border: 1px solid black;
+    padding: 81.98px 85px 0 85px;
+    margin-bottom: 30px;
+    width: 100%;
+    height: 1090px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#main_img_box{
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 50px;
+}
+
+#top_img_box, #bottom_img_box{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.img_box{
+    height: 393px; 
+    width: 257px;
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+.img_box img{
+    width: 100%;
+    height: 100%;
+}
+
+
+#main_bottom_box{
+    width: 300px;
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid black;
+}
+
+
