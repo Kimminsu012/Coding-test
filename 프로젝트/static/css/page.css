@@ -149,7 +149,7 @@
 
 
 
-#main_slide_box{
+/* #main_slide_box{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -190,79 +190,19 @@
 #slide_bt:active{
     box-shadow: 4px 3px 2px 1px;
     font-size: 10px;
-}
-
-
-
-/* 
-#point_box{
-    width: 60%;
-    display: flex;
-    justify-content: space-evenly;
-    height: 50px;
-    align-items: center;
-}
-
-
-
-.cir{
-    width: 20px;
-    height: 20px;
-    border-radius: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
-    transition: .3s ease-in-out;
-    animation: box 3s infinite linear;
-}
-
-.cir:nth-child(1){
-    animation-delay: 3s;
-}
-.cir:nth-child(2){
-
-    animation-delay: 6s;
-}
-.cir:nth-child(3){
-
-    animation-delay: 9s;
-}
-
-.cir:nth-child(1):hover{
-    background-color: black;
-    color: white;
-}
-.cir:nth-child(2):hover{
-    background-color: black;
-    color: white;
-}
-.cir:nth-child(3):hover{
-    background-color: black;
-    color: white;
-}
-.cir:nth-child(4):hover{
-    background-color: black;
-    color: white;
-}
-.cir:nth-child(5):hover{
-    background-color: black;
-    color: white;
-}
-.cir:nth-child(6):hover{
-    background-color: black;
-    color: white;
 } */
+
+
+
+
+
+
+
 
 li{
     list-style: none;
 }
 
-@keyframes box{
-    0% { background-color: white; color: black;}
-    100% { background-color: black; color: white; }
-    /* animation: box 1s ease-in infinite alternate; */
-}
 
 @keyframes left_r{
     0% { transform: translateX(0); }

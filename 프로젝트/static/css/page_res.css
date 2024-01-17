@@ -1,8 +1,3 @@
-*{
-    margin: 0 auto;
-    box-sizing: border-box;
-    padding: 0;
-}
 
 .navbar_main {
     position: fixed;
@@ -59,6 +54,53 @@
     margin-left: 5%;
 }
 
+/* reset */
+* {margin: 0; padding: 0; box-sizing:border-box;}
+a {text-decoration: none;}
+li {list-style: none;}
+img {display: block; width: 100%;}
+body {
+height: 100vh;
+}
+
+
+/*slide*/
+.slide_wrap {
+    width: 55%;
+    position: relative;
+}
+.slide_show {
+width: 500px; height: 500px; overflow: hidden;
+position: absolute;
+left: 0; top: 0; right: 0; bottom: 0; margin: auto;
+}
+.slide_show .slide_list {
+position: relative;
+overflow:hidden; width: 10000px; height: 1200px;
+}
+.slide_show .slide_list > div {
+float: left; width: 500px; padding: 5px; height: 500px;
+box-sizing: content-box; position: relative;
+}
+.slide_show .slide_list > div:before {
+position: absolute; left: 10px; top: 10px; color: #fff;
+font-family: 'RIDIBatang';
+}
+
+.slide_show .slide_list > div img {width: 100%;}
+
+.slide_btn {
+width: 100%;
+position: absolute; 
+top: 50%;
+left: 50%; 
+transform: translate(-50%,-50%);
+}
+.slide_btn button {
+cursor: pointer;
+}
+
+
 #wrap{
     width: 1720px;
     height: 950px;
@@ -78,9 +120,105 @@
     align-items: center;
     position: relative;
 }
-
 #main_box{
     width: 100%;
     display: flex;
     justify-content: space-around;
+}
+
+.prev, .next{
+    font-size: 30px;
+    position: absolute;
+    background: 0;
+    border: 0;
+}
+
+.prev{
+    left: 0;
+}
+
+.prev:active{
+    left: 2px;
+    font-size: 35px;
+}
+
+.next{
+    right: 0;
+}
+
+.next:active{
+    right: 2px;
+    font-size: 35px;
+}
+/*
+
+.cir{
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    transition: .3s ease-in-out;
+}
+
+.cir:nth-child(1):hover{
+    background-color: black;
+
+}
+.cir:nth-child(2):hover{
+    background-color: black;
+
+}
+.cir:nth-child(3):hover{
+    background-color: black;
+
+}
+.cir:nth-child(4):hover{
+    background-color: black;
+
+}
+.cir:nth-child(5):hover{
+    background-color: black;
+
+}
+.cir:nth-child(6):hover{
+    background-color: black;
+
+}
+*/
+
+
+
+#main_text_box{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+}
+
+.title{
+    width: 100%;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    font-weight: 800;
+    border: 1px solid black;
+    border-bottom: 0;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    padding: 10px;
+}
+
+.text{
+    border: 1px solid black;
+    border-top: 0;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    width: 100%;
+    height: 405px;
+    font-size: 30px;
+    padding: 15px;
 }

@@ -4,10 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./static/css/page_res.css">
-    <script src="./static/javascript/page_res.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
 
 </head>
@@ -27,20 +25,29 @@
         </div>
         <div id="main_wrap">
             <div id="main_box">
-                <div id="main_img_box">
-                    <img src="./static/images/선반4.png" alt="1">
+            <div class="slide_wrap">
+                <div class="slide_show">
+                    <div class="slide_list">
+                        <div class="slide"><img src="./static/images/선반.png" alt="이미지"></div>
+                        <div class="slide"><img src="./static/images/선반2.png" alt="이미지"></div>
+                        <div class="slide"><img src="./static/images/선반3.png" alt="이미지"></div>
+                        <div class="slide"><img src="./static/images/선반4.png" alt="이미지"></div>
+                        <div class="slide"><img src="./static/images/선반5.png" alt="이미지"></div>
+                    </div>
                 </div>
+                <div class="slide_btn">
+                    <button class="prev"><i class="bi bi-caret-left-fill"></i></button>
+                    <button class="next"><i class="bi bi-caret-right-fill"></i></button>
+                </div>
+            </div>
                 <div id="main_text_box">
                     <div class="text_box">
                         <div class="title">
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius sint, aliquam fugiat nihil dolor commodi vel magni, tempora quos minus, autem fugit voluptas corporis sunt. Voluptatibus labore autem magnam alias!
+                            제목 아무거나
                         </div>
                         <div class="text">
                             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt necessitatibus ratione, recusandae illo pariatur explicabo cumque laboriosam omnis fugit impedit at nihil provident obcaecati quis perferendis, beatae porro a illum.
                         </div>
-                    </div>
-                    <div class="icon_box">
-                        <i class="bi bi-door-closed"></i>
                     </div>
                 </div>
             </div>
@@ -48,6 +55,6 @@
 
 
     </div>
-    
+    <script src="./static/javascript/page_res.js"></script>
 </body>
 </html>
