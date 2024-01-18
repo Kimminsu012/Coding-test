@@ -83,10 +83,6 @@
     align-items: center;
 }
 
-#top_img_box{
-    display: flex;
-}
-
 #top_img_box:hover , #bottom_img_box:hover{
     animation-play-state: paused;
 }
